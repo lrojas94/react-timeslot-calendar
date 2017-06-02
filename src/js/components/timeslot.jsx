@@ -6,7 +6,7 @@ import {
   DEFAULT,
   SELECTED,
   DISABLED,
- } from 'constants/timeslot.js';
+} from '../constants/timeslot.js';
 
 export default class Timeslot extends React.Component {
   render() {
