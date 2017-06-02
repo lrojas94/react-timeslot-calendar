@@ -22,6 +22,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.5",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^7.0.1",
     "node-sass": "^4.5.3",
