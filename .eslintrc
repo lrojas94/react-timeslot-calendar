@@ -20,6 +20,8 @@
     "camelcase": 2,
     "comma-dangle": ["error", "always-multiline"],
     "keyword-spacing": ["error", { "after": true, "before": true }],
+    "react/jsx-curly-spacing": ["error", "always"],
+    "react/jsx-equals-spacing": ["error", "always"]
   },
   "globals": {
     "document": true
