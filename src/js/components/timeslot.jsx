@@ -23,13 +23,23 @@ export default class Timeslot extends React.Component {
     });
 
     return (
-      <div className= { timeslotClassNames } onClick = {onClick}>
-        {description}
+      <div className = { timeslotClassNames } onClick = { onClick }>
+        { description }
       </div>
     );
   }
 }
 
+Timeslot.defaultProps = {
+  status: DEFAULT,
+};
+
+/**
+ * [propTypes description]
+ * @type {String} description: The contents to be displayed by the timeslot. Default format will resume to something similar to "7:00 PM - 8:00 PM"
+ * @type {String} status: allows the div to change format based on the current status of the element (disabled, selected, default)
+ * @type (Function) onClick: Function to be excecuted when clcked.
+ */
 Timeslot.propTypes = {
   description: PropTypes.string.isRequired,
   status: PropTypes.oneOf([
@@ -37,5 +47,5 @@ Timeslot.propTypes = {
     SELECTED,
     DISABLED,
   ]),
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
 };
