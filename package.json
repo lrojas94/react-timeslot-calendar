@@ -8,7 +8,7 @@
     "eslint": "./node_modules/.bin/eslint src/js/react-timeslot-calendar.jsx",
     "prod": "./node_modules/.bin/webpack -p --config webpack.config.js",
     "dev": "./node_modules/.bin/webpack-dev-server --config webpack.demo.config.js --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run eslint"
   },
   "keywords": [
     "react",
