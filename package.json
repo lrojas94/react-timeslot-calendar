@@ -4,7 +4,9 @@
   "description": "A calendar based on timeslots which can be set as available, occupied and so on.",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/eslint src/js/react-timeslot-calendar.jsx && ./node_modules/.bin/webpack -p --config webpack.config.js",
+    "build": "npm run eslint && npm run prod",
+    "eslint": "./node_modules/.bin/eslint src/js/react-timeslot-calendar.jsx",
+    "prod": "./node_modules/.bin/webpack -p --config webpack.config.js",
     "dev": "./node_modules/.bin/webpack-dev-server --config webpack.demo.config.js --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -34,7 +36,8 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "calendarjs": "^0.1.0"
+    "calendarjs": "^0.1.0",
+    "moment": "^2.18.1"
   },
   "peerDependencies": {
     "react": "^15.5.4"

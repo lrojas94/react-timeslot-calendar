@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import {
   DEFAULT,
@@ -10,31 +11,31 @@ import {
 export default class Timeslot extends React.Component {
   render() {
     const {
-      startTime,
-      endTime,
+      description,
       status,
+      onClick,
     } = this.props;
 
     const timeslotClassNames = classnames({
-      'timeslot': true,
-      'timeslot--selected': status == SELECTED,
-      'timeslot--disabled': status == DISABLED,
+      'tsc-timeslot': true,
+      'tsc-timeslot--selected': status == SELECTED,
+      'tsc-timeslot--disabled': status == DISABLED,
     });
 
     return (
-      <div className={timeslotClassNames}>
-      {startTime} - {endTime}
+      <div className= { timeslotClassNames } onClick = {onClick}>
+        {description}
       </div>
     );
   }
 }
 
 Timeslot.propTypes = {
-  startTime: PropTypes.string.isRequired,
-  endTime: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   status: PropTypes.oneOf([
     DEFAULT,
     SELECTED,
     DISABLED,
   ]),
-}
+  onClick: PropTypes.func,
+};
