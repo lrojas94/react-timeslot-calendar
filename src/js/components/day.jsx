@@ -49,7 +49,7 @@ export default class Day extends React.Component {
 
   _onTimeslotClick(index) {
     const {
-    onClick,
+      onClick,
     } = this.props;
 
     onClick(index);
@@ -63,11 +63,10 @@ Day.defaultProps = {
 };
 
 /**
- * [propTypes description]
  * @type {String} timeslotFormat: format used by moment when identifying the timeslot
  * @type {String} timslotShowFormat: format to show used by moment when formating timeslot hours for final view.
  * @type {Array} timeslots: Array of timeslots.
- * @type {Function} onClick: Function to be excecuted when clcked.
+ * @type {Function} onClick: Function to be excecuted when clicked.
  */
 Day.propTypes = {
   timeslotFormat: PropTypes.string.isRequired,
