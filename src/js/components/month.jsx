@@ -71,12 +71,14 @@ export default class Month extends React.Component {
 
     return (
       <div className = "tsc-month__actions">
-        <div className = "tsc-month__action-element--left" onClick = { this._onPrevWeekClicked.bind(this) }>
+        <div className = "tsc-month__action tsc-month__action-element tsc-month__action-element--left" onClick = { this._onPrevWeekClicked.bind(this) }>
+          &#8249;
         </div>
-        <div className = "tsc-month__action-title">
+        <div className = "tsc-month__action tsc-month__action-title">
           { actionTitle }
         </div>
-        <div className = "tsc-month__action-element--right" onClick = { this._onNextWeekClicked.bind(this) }>
+        <div className = "tsc-month__action tsc-month__action-element tsc-month__action-element--right" onClick = { this._onNextWeekClicked.bind(this) }>
+          &#8250;
         </div>
       </div>
     );
@@ -87,19 +89,19 @@ export default class Month extends React.Component {
    */
   _onPrevWeekClicked() {
     const {
-      currentWeek,
+      currentWeekIndex,
     } = this.state;
 
     const {
       onGoToPrevMonth,
     } = this.props;
 
-    if (currentWeek - 1 >= 0) {
+    if (currentWeekIndex - 1 >= 0) {
       this.setState({
-        currentWeek: currentWeek - 1,
+        currentWeekIndex: currentWeekIndex - 1,
       });
     }
-    else {
+    else if (onGoToPrevMonth) {
       onGoToPrevMonth();
     }
   }
@@ -109,7 +111,7 @@ export default class Month extends React.Component {
    */
   _onNextWeekClicked() {
     const {
-      currentWeek,
+      currentWeekIndex,
     } = this.state;
 
     const {
@@ -117,12 +119,12 @@ export default class Month extends React.Component {
       onGoToNextMonth,
     } = this.props;
 
-    if (currentWeek + 1 < weeks.length()) {
+    if (currentWeekIndex + 1 < weeks.length) {
       this.setState({
-        currentWeek: currentWeek + 1,
+        currentWeekIndex: currentWeekIndex + 1,
       });
     }
-    else {
+    else if (onGoToNextMonth) {
       onGoToNextMonth();
     }
   }

@@ -1,11 +1,16 @@
+$color-clouds: #ecf0f1;
+$color-main-orange: #FF6235;
+$color-main-black: #313232;
+$color-white: #FFFFFF;
+$default-fonts: 'Open Sans', sans-serif;
 /**
  * Timeslot Component variables:
  */
-$timeslot-default-bg-color: #FFFFFF;
+$timeslot-default-bg-color: $color-white;
 $timeslot-selected-bg-color: #FF3E00;
 $timeslot-disabled-bg-color: #EEEDEB;
-$timeslot-default-color: #313232;
-$timeslot-selected-color: #FFFFFF;
+$timeslot-default-color: $color-main-black;
+$timeslot-selected-color: $color-white;
 $timeslot-disabled-color: #C6C3BD;
 $timeslot-border-radius: 0.25em;
 $timeslot-margin: 0.8em;
@@ -14,5 +19,10 @@ $timeslot-fonts: 'Open Sans', sans-serif;
 /**
  * Day Component variables
  */
-$day-default-color: #FF6235;
+$day-default-color: $color-main-orange;
 $day-fonts: 'Open Sans', sans-serif;
+
+/**
+ * Month Variables
+ */
+$month-bg-color: #F2F1EF;
