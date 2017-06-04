@@ -8,7 +8,7 @@
     "eslint": "./node_modules/.bin/eslint src/js/react-timeslot-calendar.jsx",
     "prod": "./node_modules/.bin/webpack -p --config webpack.config.js",
     "dev": "./node_modules/.bin/webpack-dev-server --config webpack.demo.config.js --hot",
-    "test": "npm run eslint"
+    "test": "npm run eslint && jest"
   },
   "keywords": [
     "react",
@@ -28,6 +28,7 @@
     "classnames": "^2.2.5",
     "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
+    "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-react": "^7.0.1",
     "jest": "^20.0.4",
     "node-sass": "^4.5.3",
@@ -36,6 +37,7 @@
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
     "sass-loader": "^6.0.5",
+    "sinon": "^2.3.2",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
