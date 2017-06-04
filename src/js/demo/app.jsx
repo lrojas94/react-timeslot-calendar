@@ -13,7 +13,7 @@ export default class App extends React.Component {
         Timeslot CSS Test (Updated App)
         <Day
           onTimeslotClick = { () => {} }
-          time = { moment() }
+          momentTime = { moment() }
         />
       </div>
     );
