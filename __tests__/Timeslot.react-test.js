@@ -20,6 +20,37 @@ it('Renders Correctly with All props.', () => {
       status = { DEFAULT }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
+      customClassNames = "custom-class"
+    />
+  )
+  .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+
+it('Renders when customClassNames prop is not provided', () => {
+  const onClickSpy = sinon.spy();
+  const tree = renderer.create(
+    <Timeslot
+      status = { DEFAULT }
+      onClick = { onClickSpy }
+      description = "1:00 PM - 2:00 AM"
+    />
+  )
+  .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+it('Renders when customClassNames is null', () => {
+  const onClickSpy = sinon.spy();
+  const tree = renderer.create(
+    <Timeslot
+      status = { DEFAULT }
+      onClick = { onClickSpy }
+      description = "1:00 PM - 2:00 AM"
+      customClassNames = { null }
     />
   )
   .toJSON();
@@ -107,15 +138,39 @@ it('Adds selected class when Status prop is Selected', () => {
   expect(timeslot.hasClass('tsc-timeslot--selected')).toEqual(true);
 });
 
-it('Adds disabled class when Status prop is Disabled', () => {
+it('Adds all classes in customClassNames when customClassNames is an object', () => {
   const onClickSpy = sinon.spy();
+  const customClasses = {
+    'added-class': true,
+    'added-class-two': true,
+  };
+
   const timeslot = shallow(
     <Timeslot
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
-      status = { DISABLED }
+      status = { SELECTED }
+      customClassNames = { customClasses }
     />
   );
 
-  expect(timeslot.hasClass('tsc-timeslot--disabled')).toEqual(true);
+  expect(timeslot.is('.added-class.added-class-two')).toEqual(true);
+});
+
+it('Does not adds classes with value = false in customClassNames', () => {
+  const onClickSpy = sinon.spy();
+  const customClasses = {
+    'not-added-class': false,
+  };
+
+  const timeslot = shallow(
+    <Timeslot
+      onClick = { onClickSpy }
+      description = "1:00 PM - 2:00 AM"
+      status = { SELECTED }
+      customClassNames = { customClasses }
+    />
+  );
+
+  expect(timeslot.is('.not-added-class')).toEqual(false);
 });
