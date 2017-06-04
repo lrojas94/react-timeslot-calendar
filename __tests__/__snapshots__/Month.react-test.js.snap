@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render tests Renders Correctly with all props. 1`] = `
+<div
+  className="tsc-month"
+>
+  <div
+    className="tsc-month__title"
+  >
+    <span>
+      June
+    </span>
+  </div>
+  <div
+    className="tsc-month__actions"
+  >
+    <div
+      className="tsc-month__action tsc-month__action-element tsc-month__action-element--left"
+      onClick={[Function]}
+    >
+      ‹
+    </div>
+    <div
+      className="tsc-month__action tsc-month__action-title"
+    >
+      4th - 10th
+    </div>
+    <div
+      className="tsc-month__action tsc-month__action-element tsc-month__action-element--right"
+      onClick={[Function]}
+    >
+      ›
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render tests Renders Correctly with min props. 1`] = `
+<div
+  className="tsc-month"
+>
+  <div
+    className="tsc-month__title"
+  >
+    <span>
+      June
+    </span>
+  </div>
+  <div
+    className="tsc-month__actions"
+  >
+    <div
+      className="tsc-month__action tsc-month__action-element tsc-month__action-element--left"
+      onClick={[Function]}
+    >
+      ‹
+    </div>
+    <div
+      className="tsc-month__action tsc-month__action-title"
+    >
+      4th - 10th
+    </div>
+    <div
+      className="tsc-month__action tsc-month__action-element tsc-month__action-element--right"
+      onClick={[Function]}
+    >
+      ›
+    </div>
+  </div>
+</div>
+`;

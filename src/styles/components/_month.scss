@@ -1,0 +1,41 @@
+.tsc-month {
+  display: flex;
+  flex-direction: column;
+  background: $month-bg-color;
+  padding: 0.8em;
+}
+
+.tsc-month__title {
+  color: $color-main-black;
+  font-family: $default-fonts;
+  text-align: center;
+  font-weight: 700;
+  padding: 1em;
+  text-transform: uppercase;
+  border-bottom: 0.075em solid darken($color-clouds, 5%);
+}
+
+.tsc-month__actions {
+  display: flex
+}
+
+.tsc-month__action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: $day-default-color;
+  font-family: $day-fonts;
+  text-align: center;
+}
+
+.tsc-month__action-element {
+  font-size: 1.5em;
+  padding: 0 1em;
+  cursor: pointer;
+}
+
+.tsc-month__action-title {
+  flex-grow: 2;
+  padding: 1em;
+}
