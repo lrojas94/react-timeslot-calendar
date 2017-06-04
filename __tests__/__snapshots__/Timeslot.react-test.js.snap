@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Correctly with All props. 1`] = `
+<div
+  className="tsc-timeslot"
+  onClick={[Function]}
+>
+  1:00 PM - 2:00 AM
+</div>
+`;
