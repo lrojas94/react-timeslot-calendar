@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jest/recommended"],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -7,7 +7,7 @@
       "jsx": true
     }
   },
-  "plugins": ["react"],
+  "plugins": ["react", "jest"],
   "rules": {
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
@@ -24,6 +24,9 @@
     "react/jsx-equals-spacing": ["error", "always"]
   },
   "globals": {
-    "document": true
+    "document": true,
+  },
+  "env": {
+    "jest/globals": true
   }
 }

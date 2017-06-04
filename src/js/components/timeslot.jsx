@@ -13,7 +13,6 @@ export default class Timeslot extends React.Component {
     const {
       description,
       status,
-      onClick,
     } = this.props;
 
     const timeslotClassNames = classnames({
@@ -23,10 +22,22 @@ export default class Timeslot extends React.Component {
     });
 
     return (
-      <div className = { timeslotClassNames } onClick = { onClick }>
+      <div className = { timeslotClassNames } onClick = { this._onTimeslotClick.bind(this) }>
         { description }
       </div>
     );
+  }
+
+  _onTimeslotClick(event) {
+    event.preventDefault();
+    const {
+      status,
+      onClick,
+    } = this.props;
+
+    if (status !== DISABLED) {
+      onClick();
+    }
   }
 }
 
