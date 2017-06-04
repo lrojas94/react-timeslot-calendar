@@ -1,5 +1,5 @@
 /**
- * Timeslot variables:
+ * Timeslot Component variables:
  */
 $timeslot-default-bg-color: #FFFFFF;
 $timeslot-selected-bg-color: #FF3E00;
@@ -8,5 +8,11 @@ $timeslot-default-color: #313232;
 $timeslot-selected-color: #FFFFFF;
 $timeslot-disabled-color: #C6C3BD;
 $timeslot-border-radius: 0.25em;
-$timeslot-margin: 0.5em;
+$timeslot-margin: 0.8em;
 $timeslot-fonts: 'Open Sans', sans-serif;
+
+/**
+ * Day Component variables
+ */
+$day-default-color: #FF6235;
+$day-fonts: 'Open Sans', sans-serif;

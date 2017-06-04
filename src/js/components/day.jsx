@@ -19,7 +19,21 @@ export default class Day extends React.Component {
 
     return (
       <div className = { dayClassNames }>
+        { this._renderTitle() }
         { this._renderTimeSlots() }
+      </div>
+    );
+  }
+
+  _renderTitle() {
+    const {
+      renderTitle,
+      momentTime,
+    } = this.props;
+
+    return (
+      <div className = "tsc-day__title">
+        <span>{renderTitle(momentTime)}</span>
       </div>
     );
   }
@@ -51,10 +65,10 @@ export default class Day extends React.Component {
 
   _onTimeslotClick(index) {
     const {
-      onClick,
+      onTimeslotClick,
     } = this.props;
 
-    onClick(index);
+    onTimeslotClick(index);
   }
 }
 
@@ -62,17 +76,24 @@ Day.defaultProps = {
   timeslotFormat: DEFAULT_TIMESLOT_FORMAT,
   timeslotShowFormat: DEFAULT_TIMESLOT_SHOW_FORMAT,
   timeslots: DEFAULT_TIMESLOTS,
+  renderTitle: (momentTime) => {
+    return momentTime.format('dddd (Do)');
+  },
 };
 
 /**
  * @type {String} timeslotFormat: format used by moment when identifying the timeslot
  * @type {String} timslotShowFormat: format to show used by moment when formating timeslot hours for final view.
  * @type {Array} timeslots: Array of timeslots.
- * @type {Function} onClick: Function to be excecuted when clicked.
+ * @type {Function} onTimeslotClick: Function to be excecuted when clicked.
+ * @type {Function} renderTitle: Function to be used when rendering the title.
+ * @type {Object} momentTime: MomentJS datetime object.
  */
 Day.propTypes = {
   timeslotFormat: PropTypes.string.isRequired,
   timeslotShowFormat: PropTypes.string.isRequired,
   timeslots: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onTimeslotClick: PropTypes.func.isRequired,
+  renderTitle: PropTypes.func.isRequired,
+  momentTime: PropTypes.object.isRequired,
 };

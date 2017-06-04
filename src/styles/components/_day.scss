@@ -1,0 +1,13 @@
+.tsc-day {
+  display: flex;
+  flex-direction: column;
+}
+
+.tsc-day__title {
+  color: $day-default-color;
+  font-family: $day-fonts;
+  text-align: center;
+  font-weight: 700;
+  padding: 1em;
+  text-transform: uppercase;
+}
