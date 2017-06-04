@@ -13,13 +13,14 @@ export default class Timeslot extends React.Component {
     const {
       description,
       status,
+      customClassNames,
     } = this.props;
 
     const timeslotClassNames = classnames({
       'tsc-timeslot': true,
       'tsc-timeslot--selected': status == SELECTED,
       'tsc-timeslot--disabled': status == DISABLED,
-    });
+    }, customClassNames);
 
     return (
       <div className = { timeslotClassNames } onClick = { this._onTimeslotClick.bind(this) }>
@@ -58,4 +59,8 @@ Timeslot.propTypes = {
     DISABLED,
   ]),
   onClick: PropTypes.func.isRequired,
+  customClassNames: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 };
