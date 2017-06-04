@@ -10,7 +10,7 @@ import Day from '../src/js/components/day';
 import Timeslot from '../src/js/components/timeslot';
 
 describe('Render tests', () => {
-  test('Renders Correctly wtesth min props.', () => {
+  test('Renders Correctly with min props.', () => {
     const onClickSpy = sinon.spy();
     const tree = renderer.create(
       <Day

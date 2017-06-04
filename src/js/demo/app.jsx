@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
+import Calendar from 'calendarjs';
 
 import '../../styles/main.scss';
 
-import Day from './../components/day.jsx';
+import Month from './../components/month.jsx';
 
 export default class App extends React.Component {
   render() {
+    let cal = new Calendar();
     return (
       <div>
         Timeslot CSS Test (Updated App)
-        <Day
-          onTimeslotClick = { () => {} }
-          momentTime = { moment() }
+        <Month
+          date = { moment() }
+          weeks = { cal.generate() }
         />
       </div>
     );
