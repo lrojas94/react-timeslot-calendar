@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render tests Renders Correctly if timeslots is an array of array. 1`] = `
+<div
+  className="tsc-day"
+>
+  <div
+    className="tsc-day__title"
+  >
+    <span>
+      Sunday (4th)
+    </span>
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    Invalid date - Invalid date - Invalid date
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    Invalid date - Invalid date
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    Invalid date - Invalid date - Invalid date - Invalid date - Invalid date
+  </div>
+</div>
+`;
+
+exports[`Render tests Renders Correctly if timeslots is an array of strings. 1`] = `
+<div
+  className="tsc-day"
+>
+  <div
+    className="tsc-day__title"
+  >
+    <span>
+      Sunday (4th)
+    </span>
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    Invalid date - Invalid date - Invalid date
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    Invalid date - Invalid date - Invalid date - Invalid date
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    Invalid date - Invalid date - Invalid date - Invalid date - Invalid date
+  </div>
+</div>
+`;
+
+exports[`Render tests Renders Correctly wtesth min props. 1`] = `
+<div
+  className="tsc-day"
+>
+  <div
+    className="tsc-day__title"
+  >
+    <span>
+      Sunday (4th)
+    </span>
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    12:00 AM - 1:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    1:00 AM - 2:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    2:00 AM - 3:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    3:00 AM - 4:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    4:00 AM - 5:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    5:00 AM - 6:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    6:00 AM - 7:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    7:00 AM - 8:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    8:00 AM - 9:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    9:00 AM - 10:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    10:00 AM - 11:00 AM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    11:00 AM - 12:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    12:00 PM - 1:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    1:00 PM - 2:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    2:00 PM - 3:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    3:00 PM - 4:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    4:00 PM - 5:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    5:00 PM - 6:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    6:00 PM - 7:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    7:00 PM - 8:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    8:00 PM - 9:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    9:00 PM - 10:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    10:00 PM - 11:00 PM
+  </div>
+  <div
+    className="tsc-timeslot"
+    onClick={[Function]}
+  >
+    11:00 PM - 12:00 AM
+  </div>
+</div>
+`;
