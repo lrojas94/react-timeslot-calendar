@@ -35,7 +35,7 @@ export default class Week extends React.Component {
       onTimeslotClick,
     } = this.props;
 
-    return onTimeslotClick();
+    onTimeslotClick();
   }
 }
 
