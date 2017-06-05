@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 
 import '../styles/main.scss';
 import Calendar from './components/calendar.jsx';
+import {
+  DEFAULT_TIMESLOTS,
+} from './constants/day.js';
+
 
 export default class ReactTimeslotCalendar extends React.Component {
 
@@ -22,6 +26,10 @@ export default class ReactTimeslotCalendar extends React.Component {
     );
   }
 }
+
+ReactTimeslotCalendar.defaultProps = {
+  timeslots: DEFAULT_TIMESLOTS,
+};
 
 /**
  * @type {String} initialDate The initial date in which to place the calendar. Must be MomentJS parseable.

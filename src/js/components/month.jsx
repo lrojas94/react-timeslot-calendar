@@ -8,18 +8,18 @@ export default class Month extends React.Component {
     super(props);
 
     this.state = {
-      currentWeekIndex: this._getStartingWeek(props.date, props.weeks),
+      currentWeekIndex: this._getStartingWeek(props.currentDate, props.weeks),
     };
   }
 
-  _getStartingWeek(date, weeks) {
+  _getStartingWeek(currentDate, weeks) {
     // find out staring week:
-    const dateWithoutTime = date.startOf('day');
+    const currentDateWithoutTime = currentDate.startOf('day');
     let startingWeek  = 0;
     weeks.some((week, index) => {
       let weekContainsDate = week.some((day) => {
         const momentDay = helpers.getMomentFromCalendarJSDateElement(day);
-        return momentDay.format() === dateWithoutTime.format();
+        return momentDay.format() === currentDateWithoutTime.format();
       });
 
       if (weekContainsDate) {
@@ -77,12 +77,14 @@ export default class Month extends React.Component {
 
     const {
       weeks,
+      timeslots,
     } = this.props;
 
     return (
       <Week
         weekToRender = { weeks[currentWeekIndex] }
         onTimeslotClick = { () => {} }
+        timeslots = { timeslots }
       />
     );
   }
@@ -138,18 +140,20 @@ export default class Month extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      currentWeekIndex: this._getStartingWeek(nextProps.date, nextProps.weeks),
+      currentWeekIndex: this._getStartingWeek(nextProps.currentDate, nextProps.weeks),
     });
   }
 }
 
 /**
-* @type {Object} date: Base date to get the month from - Usually first day of the month
+* @type {Object} currentDate: Base currentDate to get the month from - Usually first day of the month
 * @type {Array} weeks: A list of weeks based on calendarJS
 * @type {Function} onWeekOutOfMonth: A callback to call when user goes out of the month
+* @type {Array} timeslots An array of timeslots to be displayed in each day.
  */
 Month.propTypes = {
-  date: PropTypes.object.isRequired,
+  currentDate: PropTypes.object.isRequired,
   weeks: PropTypes.array.isRequired,
   onWeekOutOfMonth: PropTypes.func,
+  timeslots : PropTypes.array.isRequired,
 };
