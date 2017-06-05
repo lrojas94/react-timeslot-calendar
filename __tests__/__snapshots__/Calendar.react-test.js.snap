@@ -1,0 +1,1143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render tests Renders Correctly. 1`] = `
+<div
+  className="tsc-calendar"
+>
+  <div
+    className="tsc-calendar__actions"
+  >
+    <div
+      className="tsc-calendar__action tsc-calendar__action-element tsc-calendar__action-element--left"
+      onClick={[Function]}
+    >
+      ‹
+    </div>
+    <div
+      className="tsc-calendar__action tsc-calendar__action-title"
+    >
+      April - 2017
+    </div>
+    <div
+      className="tsc-calendar__action tsc-calendar__action-element tsc-calendar__action-element--right"
+      onClick={[Function]}
+    >
+      ›
+    </div>
+  </div>
+  <div
+    className="tsc-month"
+  >
+    <div
+      className="tsc-month__actions"
+    >
+      <div
+        className="tsc-month__action tsc-month__action-element tsc-month__action-element--left"
+        onClick={[Function]}
+      >
+        ‹
+      </div>
+      <div
+        className="tsc-month__action tsc-month__action-title"
+      >
+        Apr 23rd - Apr 29th
+      </div>
+      <div
+        className="tsc-month__action tsc-month__action-element tsc-month__action-element--right"
+        onClick={[Function]}
+      >
+        ›
+      </div>
+    </div>
+    <div
+      className="tsc-week"
+    >
+      <div
+        className="tsc-day"
+      >
+        <div
+          className="tsc-day__title"
+        >
+          <span>
+            Sunday (23)
+          </span>
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 AM - 1:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 AM - 2:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 AM - 3:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 AM - 4:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 AM - 5:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 AM - 6:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 AM - 7:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 AM - 8:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 AM - 9:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 AM - 10:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 AM - 11:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 AM - 12:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 PM - 1:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 PM - 2:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 PM - 3:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 PM - 4:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 PM - 5:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 PM - 6:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 PM - 7:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 PM - 8:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 PM - 9:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 PM - 10:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 PM - 11:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 PM - 12:00 AM
+        </div>
+      </div>
+      <div
+        className="tsc-day"
+      >
+        <div
+          className="tsc-day__title"
+        >
+          <span>
+            Monday (24)
+          </span>
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 AM - 1:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 AM - 2:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 AM - 3:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 AM - 4:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 AM - 5:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 AM - 6:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 AM - 7:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 AM - 8:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 AM - 9:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 AM - 10:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 AM - 11:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 AM - 12:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 PM - 1:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 PM - 2:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 PM - 3:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 PM - 4:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 PM - 5:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 PM - 6:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 PM - 7:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 PM - 8:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 PM - 9:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 PM - 10:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 PM - 11:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 PM - 12:00 AM
+        </div>
+      </div>
+      <div
+        className="tsc-day"
+      >
+        <div
+          className="tsc-day__title"
+        >
+          <span>
+            Tuesday (25)
+          </span>
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 AM - 1:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 AM - 2:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 AM - 3:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 AM - 4:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 AM - 5:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 AM - 6:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 AM - 7:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 AM - 8:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 AM - 9:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 AM - 10:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 AM - 11:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 AM - 12:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 PM - 1:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 PM - 2:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 PM - 3:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 PM - 4:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 PM - 5:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 PM - 6:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 PM - 7:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 PM - 8:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 PM - 9:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 PM - 10:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 PM - 11:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 PM - 12:00 AM
+        </div>
+      </div>
+      <div
+        className="tsc-day"
+      >
+        <div
+          className="tsc-day__title"
+        >
+          <span>
+            Wednesday (26)
+          </span>
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 AM - 1:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 AM - 2:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 AM - 3:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 AM - 4:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 AM - 5:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 AM - 6:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 AM - 7:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 AM - 8:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 AM - 9:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 AM - 10:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 AM - 11:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 AM - 12:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 PM - 1:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 PM - 2:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 PM - 3:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 PM - 4:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 PM - 5:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 PM - 6:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 PM - 7:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 PM - 8:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 PM - 9:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 PM - 10:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 PM - 11:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 PM - 12:00 AM
+        </div>
+      </div>
+      <div
+        className="tsc-day"
+      >
+        <div
+          className="tsc-day__title"
+        >
+          <span>
+            Thursday (27)
+          </span>
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 AM - 1:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 AM - 2:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 AM - 3:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 AM - 4:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 AM - 5:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 AM - 6:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 AM - 7:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 AM - 8:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 AM - 9:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 AM - 10:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 AM - 11:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 AM - 12:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 PM - 1:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 PM - 2:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 PM - 3:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 PM - 4:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 PM - 5:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 PM - 6:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 PM - 7:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 PM - 8:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 PM - 9:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 PM - 10:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 PM - 11:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 PM - 12:00 AM
+        </div>
+      </div>
+      <div
+        className="tsc-day"
+      >
+        <div
+          className="tsc-day__title"
+        >
+          <span>
+            Friday (28)
+          </span>
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 AM - 1:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 AM - 2:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 AM - 3:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 AM - 4:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 AM - 5:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 AM - 6:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 AM - 7:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 AM - 8:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 AM - 9:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 AM - 10:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 AM - 11:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 AM - 12:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 PM - 1:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 PM - 2:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 PM - 3:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 PM - 4:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 PM - 5:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 PM - 6:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 PM - 7:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 PM - 8:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 PM - 9:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 PM - 10:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 PM - 11:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 PM - 12:00 AM
+        </div>
+      </div>
+      <div
+        className="tsc-day"
+      >
+        <div
+          className="tsc-day__title"
+        >
+          <span>
+            Saturday (29)
+          </span>
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 AM - 1:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 AM - 2:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 AM - 3:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 AM - 4:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 AM - 5:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 AM - 6:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 AM - 7:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 AM - 8:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 AM - 9:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 AM - 10:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 AM - 11:00 AM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 AM - 12:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          12:00 PM - 1:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          1:00 PM - 2:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          2:00 PM - 3:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          3:00 PM - 4:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          4:00 PM - 5:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          5:00 PM - 6:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          6:00 PM - 7:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          7:00 PM - 8:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          8:00 PM - 9:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          9:00 PM - 10:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          10:00 PM - 11:00 PM
+        </div>
+        <div
+          className="tsc-timeslot"
+          onClick={[Function]}
+        >
+          11:00 PM - 12:00 AM
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

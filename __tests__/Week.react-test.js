@@ -12,6 +12,8 @@ import Week from '../src/js/components/week';
 import Day from '../src/js/components/day';
 import Timeslot from '../src/js/components/timeslot';
 
+import { DEFAULT_TIMESLOTS } from '../src/js/constants/day';
+
 const cal = new Calendar(2017, 4);
 
 describe('Render tests', () => {
@@ -21,8 +23,9 @@ describe('Render tests', () => {
 
     const tree = renderer.create(
       <Week
-      weekToRender = { weeks[0] }
-      onTimeslotClick = { onClickSpy }
+        timeslots = { DEFAULT_TIMESLOTS }
+        weekToRender = { weeks[0] }
+        onTimeslotClick = { onClickSpy }
       />
     )
     .toJSON();
@@ -36,8 +39,9 @@ describe('Render tests', () => {
 
     const component = mount(
       <Week
-      weekToRender = { weeks[0].slice(0, 3) }
-      onTimeslotClick = { onClickSpy }
+        timeslots = { DEFAULT_TIMESLOTS }
+        weekToRender = { weeks[0].slice(0, 3) }
+        onTimeslotClick = { onClickSpy }
       />
     );
 
@@ -52,6 +56,7 @@ describe('Render tests', () => {
 
     const component = mount(
       <Week
+        timeslots = { DEFAULT_TIMESLOTS }
         weekToRender = { weeks[0] }
         onTimeslotClick = { onClickSpy }
       />

@@ -8,12 +8,14 @@ import {
 } from 'enzyme';
 import Day from '../src/js/components/day';
 import Timeslot from '../src/js/components/timeslot';
+import { DEFAULT_TIMESLOTS } from '../src/js/constants/day';
 
 describe('Render tests', () => {
   test('Renders Correctly with min props.', () => {
     const onClickSpy = sinon.spy();
     const tree = renderer.create(
       <Day
+        timeslots = { DEFAULT_TIMESLOTS }
       onTimeslotClick = { onClickSpy }
       momentTime = { moment([2017, 3, 28]) }
       />
@@ -33,6 +35,7 @@ describe('Render tests', () => {
 
     const tree = renderer.create(
       <Day
+        timeslots = { DEFAULT_TIMESLOTS }
       onTimeslotClick = { onClickSpy }
       momentTime = { moment([2017, 3, 28]) }
       timeslots = { timeslots }
@@ -53,6 +56,7 @@ describe('Render tests', () => {
 
     const tree = renderer.create(
       <Day
+        timeslots = { DEFAULT_TIMESLOTS }
       onTimeslotClick = { onClickSpy }
       momentTime = { moment([2017, 3, 28]) }
       timeslots = { timeslots }
@@ -70,6 +74,7 @@ describe('Functionality tests', () => {
     const renderTitleSpy = sinon.spy();
     const component = mount(
       <Day
+        timeslots = { DEFAULT_TIMESLOTS }
         onTimeslotClick = { onClickSpy }
         renderTitle = { renderTitleSpy }
         momentTime = { moment([2017, 3, 28]) }
@@ -83,6 +88,7 @@ describe('Functionality tests', () => {
     const onClickSpy = sinon.spy();
     const component = mount(
       <Day
+        timeslots = { DEFAULT_TIMESLOTS }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
       />
@@ -98,6 +104,7 @@ describe('Functionality tests', () => {
     const onClickSpy = sinon.spy();
     const component = shallow(
       <Day
+        timeslots = { DEFAULT_TIMESLOTS }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
       />
@@ -116,6 +123,7 @@ describe('Functionality tests', () => {
     ];
     const component = shallow(
       <Day
+        timeslots = { DEFAULT_TIMESLOTS }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         timeslots = { timeslots }

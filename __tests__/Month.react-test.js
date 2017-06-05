@@ -8,6 +8,7 @@ import {
 } from 'enzyme';
 import Month from '../src/js/components/month';
 import helpers from '../src/js/util/helpers';
+import { DEFAULT_TIMESLOTS } from '../src/js/constants/day';
 
 const cal = new Calendar(2017, 4);
 
@@ -16,8 +17,9 @@ describe('Render tests', () => {
     const weeks = cal.generate();
     const tree = renderer.create(
       <Month
+        timeslots = { DEFAULT_TIMESLOTS }
         weeks = { weeks }
-        date = { moment([2017, 3, 1]) }
+        currentDate = { moment([2017, 3, 1]) }
       />
     )
     .toJSON();
@@ -27,14 +29,13 @@ describe('Render tests', () => {
 
   test('Renders Correctly with all props.', () => {
     const weeks = cal.generate();
-    const onGoToNextMonth = sinon.spy();
-    const onGoToPrevMonth = sinon.spy();
+    const onWeekOutOfMonth = sinon.spy();
     const tree = renderer.create(
       <Month
+        timeslots = { DEFAULT_TIMESLOTS }
         weeks = { weeks }
-        date = { moment([2017, 3, 1]) }
-        onGoToPrevMonth = { onGoToPrevMonth }
-        onGoToNextMonth = { onGoToNextMonth }
+        currentDate = { moment([2017, 3, 1]) }
+        onWeekOutOfMonth = { onWeekOutOfMonth }
       />
     )
     .toJSON();
@@ -44,23 +45,24 @@ describe('Render tests', () => {
 });
 
 describe('Functionality tests', () => {
-  test('Current week contains date', () => {
+  test('Current week contains currentDate', () => {
     const weeks = cal.generate();
-    const date = moment([2017, 3, 1]);
+    const currentDate = moment([2017, 3, 1]);
     const component = mount(
       <Month
+        timeslots = { DEFAULT_TIMESLOTS }
         weeks = { weeks }
-        date = { date }
+        currentDate = { currentDate }
       />
     );
 
     let weekIndex = null;
     weeks.some((week, index) => {
-      let dateFound = week.some((day) => {
-        return helpers.getMomentFromCalendarJSDateElement(day).format() === date.format();
+      let currentDateFound = week.some((day) => {
+        return helpers.getMomentFromCalendarJSDateElement(day).format() === currentDate.format();
       });
 
-      if (dateFound) {
+      if (currentDateFound) {
         weekIndex = index;
         return true;
       }
@@ -70,45 +72,48 @@ describe('Functionality tests', () => {
     expect(component.state().currentWeekIndex).toEqual(weekIndex);
   });
 
-  test('onGoToPrevMonth callback called if date is start of the month and user tries to go back', () => {
+  test('onWeekOutOfMonth callback called if currentDate is start of the month and user tries to go back', () => {
     const weeks = cal.generate();
-    const date = moment([2017, 3, 1]).startOf('month');
-    const onGoToPrevMonth = sinon.spy();
+    const currentDate = moment([2017, 3, 1]).startOf('month');
+    const onWeekOutOfMonth = sinon.spy();
     const component = mount(
       <Month
+        timeslots = { DEFAULT_TIMESLOTS }
         weeks = { weeks }
-        date = { date }
-        onGoToPrevMonth = { onGoToPrevMonth }
+        currentDate = { currentDate }
+        onWeekOutOfMonth = { onWeekOutOfMonth }
       />
     );
 
     component.find('.tsc-month__action-element--left').simulate('click');
-    expect(onGoToPrevMonth).toHaveProperty('callCount', 1);
+    expect(onWeekOutOfMonth).toHaveProperty('callCount', 1);
   });
 
-  test('onGoToNextMonth callback called if date is end of the month and user tries to go next', () => {
+  test('onWeekOutOfMonth callback called if currentDate is end of the month and user tries to go next', () => {
     const weeks = cal.generate();
-    const date = moment([2017, 3, 1]).endOf('month');
-    const onGoToNextMonth = sinon.spy();
+    const currentDate = moment([2017, 3, 1]).endOf('month');
+    const onWeekOutOfMonth = sinon.spy();
     const component = mount(
       <Month
+        timeslots = { DEFAULT_TIMESLOTS }
         weeks = { weeks }
-        date = { date }
-        onGoToNextMonth = { onGoToNextMonth }
+        currentDate = { currentDate }
+        onWeekOutOfMonth = { onWeekOutOfMonth }
       />
     );
 
     component.find('.tsc-month__action-element--right').simulate('click');
-    expect(onGoToNextMonth).toHaveProperty('callCount', 1);
+    expect(onWeekOutOfMonth).toHaveProperty('callCount', 1);
   });
 
   test('Users can go to next week if available', () => {
     const weeks = cal.generate();
-    const date = moment([2017, 3, 1]).startOf('month');
+    const currentDate = moment([2017, 3, 1]).startOf('month');
     const component = mount(
       <Month
+        timeslots = { DEFAULT_TIMESLOTS }
         weeks = { weeks }
-        date = { date }
+        currentDate = { currentDate }
       />
     );
     const weekIndexBeforeClick = component.state().currentWeekIndex;
@@ -119,11 +124,12 @@ describe('Functionality tests', () => {
 
   test('Users can go to prev week if available', () => {
     const weeks = cal.generate();
-    const date = moment([2017, 3, 1]).endOf('month');
+    const currentDate = moment([2017, 3, 1]).endOf('month');
     const component = mount(
       <Month
+        timeslots = { DEFAULT_TIMESLOTS }
         weeks = { weeks }
-        date = { date }
+        currentDate = { currentDate }
       />
     );
 

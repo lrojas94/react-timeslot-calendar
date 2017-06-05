@@ -5,13 +5,6 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
   className="tsc-month"
 >
   <div
-    className="tsc-month__title"
-  >
-    <span>
-      April
-    </span>
-  </div>
-  <div
     className="tsc-month__actions"
   >
     <div
@@ -1128,13 +1121,6 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
 <div
   className="tsc-month"
 >
-  <div
-    className="tsc-month__title"
-  >
-    <span>
-      April
-    </span>
-  </div>
   <div
     className="tsc-month__actions"
   >

@@ -1,0 +1,36 @@
+.tsc-calendar {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: $color-main-black;
+  background: $calendar-bg-color;
+  padding: 0.8em;
+}
+
+.tsc-calendar__actions {
+  display: flex;
+  flex: 1;
+  border-bottom: 0.075em solid darken($color-clouds, 5%);
+}
+
+.tsc-calendar__action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: $color-main-black;
+  font-family: $default-fonts;
+  text-align: center;
+}
+
+.tsc-calendar__action-element {
+  font-size: 1.5em;
+  padding: 0 1em;
+  cursor: pointer;
+}
+
+.tsc-calendar__action-title {
+  flex-grow: 2;
+  padding: 1em;
+  text-transform: uppercase;
+}

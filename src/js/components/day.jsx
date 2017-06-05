@@ -7,7 +7,6 @@ import Timeslot from './timeslot.jsx';
 import {
   DEFAULT_TIMESLOT_FORMAT,
   DEFAULT_TIMESLOT_SHOW_FORMAT,
-  DEFAULT_TIMESLOTS,
 } from '../constants/day.js';
 
 export default class Day extends React.Component {
@@ -75,7 +74,6 @@ export default class Day extends React.Component {
 Day.defaultProps = {
   timeslotFormat: DEFAULT_TIMESLOT_FORMAT,
   timeslotShowFormat: DEFAULT_TIMESLOT_SHOW_FORMAT,
-  timeslots: DEFAULT_TIMESLOTS,
   renderTitle: (momentTime) => {
     return momentTime.format('dddd (D)');
   },

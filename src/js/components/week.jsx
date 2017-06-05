@@ -16,6 +16,7 @@ export default class Week extends React.Component {
   _renderWeekDays() {
     const {
       weekToRender,
+      timeslots,
     } = this.props;
 
     return weekToRender.map((day, index) => {
@@ -25,6 +26,7 @@ export default class Week extends React.Component {
           key = { index }
           onTimeslotClick = { this._onTimeslotClick.bind(this, index) }
           momentTime = { formattedDate }
+          timeslots = { timeslots }
           />
       );
     });
@@ -46,4 +48,5 @@ export default class Week extends React.Component {
 Week.propTypes = {
   weekToRender: PropTypes.array.isRequired,
   onTimeslotClick: PropTypes.func.isRequired,
+  timeslots : PropTypes.array.isRequired,
 };
