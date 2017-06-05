@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import Day from './Day.jsx';
+// import moment from 'moment';
+import helpers from './../util/helpers';
+import Day from './day.jsx';
 
 export default class Week extends React.Component {
   render() {
-    const weekClassNames = classnames({
-      'tsc-week': true,
-    });
 
     return (
-      <div className = { weekClassNames }>
+      <div className = 'tsc-week'>
         { this._renderWeekDays() }
       </div>
     );
@@ -18,27 +16,35 @@ export default class Week extends React.Component {
 
   _renderWeekDays() {
     const {
-      weekDays,
+      weekToRender,
     } = this.props;
 
-    return weekDays.map((day, index) => {
-      if (day !== null && typeof day === 'object'){
-        return (
-          <Day
-            key = { 'day_' + index }
-            description = { day.description }
-            timeslots = { day.timeslots }
-            onClick = { this._onTimeslotClick.bind(this, index) }
+    return weekToRender.map((day, index) => {
+      let formattedDate = helpers.getMomentFromCalendarJSDateElement(day);
+      return (
+        <Day
+          key = { index }
+          onTimeslotClick = { this._onTimeslotClick.bind(this, index) }
+          momentTime = { formattedDate }
           />
-        );
-      }
+      );
     });
+  }
+
+  _onTimeslotClick(index) {
+    const {
+      onTimeslotClick,
+    } = this.props;
+
+    onTimeslotClick(index);
   }
 }
 
 /**
- * @type {Array} weekDays: Days to render. Each day should also have the requested timeslots, unless default configuration is desired.
+ * @type {Array} weekToRender: Week to render. Each day should also have the requested timeslots, unless default configuration is desired.
+ * @type {Function} onTimeslotClick: Function to be excecuted when clicked.
  */
 Week.propTypes = {
-  weekDays: PropTypes.array.isRequired,
+  weekToRender: PropTypes.array.isRequired,
+  onTimeslotClick: PropTypes.func.isRequired,
 };
