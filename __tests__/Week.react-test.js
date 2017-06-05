@@ -26,7 +26,7 @@ describe('Render tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         weekToRender = { weeks[0] }
         onTimeslotClick = { onClickSpy }
-        initialDate = { moment([2017, 3, 28]).format() }
+        initialDate = { moment([2017, 3, 28]) }
       />
     )
     .toJSON();
@@ -43,7 +43,7 @@ describe('Render tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         weekToRender = { weeks[0].slice(0, 3) }
         onTimeslotClick = { onClickSpy }
-        initialDate = { moment([2017, 3, 28]).format() }
+        initialDate = { moment([2017, 3, 28]) }
       />
     );
 
@@ -61,7 +61,7 @@ describe('Render tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         weekToRender = { weeks[0] }
         onTimeslotClick = { onClickSpy }
-        initialDate = { moment([2017, 1, 1]).format() }
+        initialDate = { moment([2017, 1, 1]) }
       />
     );
 

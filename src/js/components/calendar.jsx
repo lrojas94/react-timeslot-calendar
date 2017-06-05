@@ -61,7 +61,7 @@ export default class Calendar extends React.Component {
     return (
       <Month
         currentDate = { currentDate }
-        initialDate = { initialDate }
+        initialDate = { moment(initialDate) }
         weeks = { weeks }
         onWeekOutOfMonth = { this._onWeekOutOfMonth.bind(this) }
         onTimeslotSelected = { this._onTimeslotSelected.bind(this) }
@@ -83,7 +83,7 @@ export default class Calendar extends React.Component {
       currentDate,
     } = this.state;
 
-    let nextDate = currentDate
+    let nextDate = currentDate.clone()
       .startOf('month')
       .add(1, 'months')
       .startOf('month');
@@ -98,7 +98,7 @@ export default class Calendar extends React.Component {
       currentDate,
     } = this.state;
 
-    let nextDate = currentDate
+    let nextDate = currentDate.clone()
       .startOf('month')
       .subtract(1, 'months')
       .startOf('month');

@@ -50,6 +50,6 @@ export default class Week extends React.Component {
 Week.propTypes = {
   weekToRender: PropTypes.array.isRequired,
   onTimeslotClick: PropTypes.func.isRequired,
-  initialDate: PropTypes.string.isRequired,
+  initialDate: PropTypes.object.isRequired,
   timeslots : PropTypes.array.isRequired,
 };

@@ -110,7 +110,7 @@ export default class Month extends React.Component {
       });
     }
     else if (onWeekOutOfMonth) {
-      const firstDayOfPrevWeek = helpers.getMomentFromCalendarJSDateElement(weeks[0][0]).subtract(1, 'days');
+      const firstDayOfPrevWeek = helpers.getMomentFromCalendarJSDateElement(weeks[0][0]).clone().subtract(1, 'days');
       onWeekOutOfMonth(firstDayOfPrevWeek);
     }
   }
@@ -135,7 +135,7 @@ export default class Month extends React.Component {
     }
     else if (onWeekOutOfMonth) {
       const lastDay = weeks[currentWeekIndex].length - 1;
-      const firstDayOfNextWeek = helpers.getMomentFromCalendarJSDateElement(weeks[currentWeekIndex][lastDay]).add(1, 'days');
+      const firstDayOfNextWeek = helpers.getMomentFromCalendarJSDateElement(weeks[currentWeekIndex][lastDay]).clone().add(1, 'days');
       onWeekOutOfMonth(firstDayOfNextWeek);
     }
   }
@@ -157,6 +157,6 @@ Month.propTypes = {
   currentDate: PropTypes.object.isRequired,
   weeks: PropTypes.array.isRequired,
   onWeekOutOfMonth: PropTypes.func,
-  initialDate: PropTypes.string.isRequired,
+  initialDate: PropTypes.object.isRequired,
   timeslots : PropTypes.array.isRequired,
 };

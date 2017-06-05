@@ -15,19 +15,19 @@ exports[`Render tests Renders Correctly if timeslots is an array of array. 1`] =
     className="tsc-timeslot tsc-timeslot--disabled"
     onClick={[Function]}
   >
-    Invalid date - Invalid date - Invalid date
+    12:00 AM - 1:00 AM
   </div>
   <div
-    className="tsc-timeslot tsc-timeslot--disabled"
+    className="tsc-timeslot"
     onClick={[Function]}
   >
-    Invalid date - Invalid date
+    1:00 AM - 2:00 AM
   </div>
   <div
-    className="tsc-timeslot tsc-timeslot--disabled"
+    className="tsc-timeslot"
     onClick={[Function]}
   >
-    Invalid date - Invalid date - Invalid date - Invalid date - Invalid date
+    3:00 AM
   </div>
 </div>
 `;
@@ -47,19 +47,19 @@ exports[`Render tests Renders Correctly if timeslots is an array of strings. 1`]
     className="tsc-timeslot tsc-timeslot--disabled"
     onClick={[Function]}
   >
-    Invalid date - Invalid date - Invalid date
+    12:00 AM
   </div>
   <div
-    className="tsc-timeslot tsc-timeslot--disabled"
+    className="tsc-timeslot"
     onClick={[Function]}
   >
-    Invalid date - Invalid date - Invalid date - Invalid date
+    1:00 AM
   </div>
   <div
-    className="tsc-timeslot tsc-timeslot--disabled"
+    className="tsc-timeslot"
     onClick={[Function]}
   >
-    Invalid date - Invalid date - Invalid date - Invalid date - Invalid date
+    2:00 AM
   </div>
 </div>
 `;

@@ -60,7 +60,13 @@ export default class Day extends React.Component {
         }
       }
       let timeslotDate = momentTime.clone();
-      let status = moment(initialDate).isBefore(timeslotDate.add(slot[0], timeslotFormat)) ? DEFAULT : DISABLED;
+      timeslotDate.add(slot[0], timeslotFormat);
+
+      let status = DEFAULT;
+      if (timeslotDate.isBefore(initialDate) || timeslotDate.isSame(initialDate)) {
+        status = DISABLED;
+      }
+
 
       return (
         <Timeslot
@@ -105,5 +111,5 @@ Day.propTypes = {
   onTimeslotClick: PropTypes.func.isRequired,
   renderTitle: PropTypes.func.isRequired,
   momentTime: PropTypes.object.isRequired,
-  initialDate: PropTypes.string.isRequired,
+  initialDate: PropTypes.object.isRequired,
 };
