@@ -16,8 +16,9 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Day
         timeslots = { DEFAULT_TIMESLOTS }
-      onTimeslotClick = { onClickSpy }
-      momentTime = { moment([2017, 3, 28]) }
+        onTimeslotClick = { onClickSpy }
+        momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 28]) }
       />
     )
     .toJSON();
@@ -28,17 +29,17 @@ describe('Render tests', () => {
   test('Renders Correctly if timeslots is an array of strings.', () => {
     const onClickSpy = sinon.spy();
     const timeslots = [
-      'now',
-      'then',
-      'later',
+      '0',
+      '1',
+      '2',
     ];
 
     const tree = renderer.create(
       <Day
-        timeslots = { DEFAULT_TIMESLOTS }
-      onTimeslotClick = { onClickSpy }
-      momentTime = { moment([2017, 3, 28]) }
-      timeslots = { timeslots }
+        timeslots = { timeslots }
+        onTimeslotClick = { onClickSpy }
+        momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 28]) }
       />
     )
     .toJSON();
@@ -49,17 +50,17 @@ describe('Render tests', () => {
   test('Renders Correctly if timeslots is an array of array.', () => {
     const onClickSpy = sinon.spy();
     const timeslots = [
-      ['now', 'then', 'later'],
-      ['then', 'later'],
-      'later',
+      ['0', '1'],
+      ['1', '2'],
+      '3',
     ];
 
     const tree = renderer.create(
       <Day
-        timeslots = { DEFAULT_TIMESLOTS }
+      timeslots = { timeslots }
       onTimeslotClick = { onClickSpy }
       momentTime = { moment([2017, 3, 28]) }
-      timeslots = { timeslots }
+      initialDate = { moment([2017, 3, 28]) }
       />
     )
     .toJSON();
@@ -78,6 +79,7 @@ describe('Functionality tests', () => {
         onTimeslotClick = { onClickSpy }
         renderTitle = { renderTitleSpy }
         momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 28]) }
       />
     );
 
@@ -91,10 +93,11 @@ describe('Functionality tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 27]) }
       />
     );
 
-    const timeslot = component.find(Timeslot).first();
+    const timeslot = component.find(Timeslot).not('.tsc-timeslot--disabled').first();
     timeslot.simulate('click');
 
     expect(onClickSpy).toHaveProperty('callCount', 1);
@@ -107,6 +110,7 @@ describe('Functionality tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 1, 1]) }
       />
     );
 
@@ -118,21 +122,37 @@ describe('Functionality tests', () => {
   test('Renders only the amount of timeslots provided', () => {
     const onClickSpy = sinon.spy();
     const timeslots = [
-      ['Start', 'End'],
-      ['Start 2', 'End 2'],
+      ['0', '1'],
+      ['1', '2'],
     ];
     const component = shallow(
       <Day
-        timeslots = { DEFAULT_TIMESLOTS }
+        timeslots = { timeslots }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
-        timeslots = { timeslots }
+        initialDate = { moment([2017, 3, 28]) }
       />
     );
 
     const timeslot = component.find(Timeslot);
 
     expect(timeslot).toHaveLength(2);
+  });
+
+  test('Expect 12 disabled timeslots', () => {
+    const onClickSpy = sinon.spy();
+    const component = mount(
+      <Day
+        timeslots = { DEFAULT_TIMESLOTS }
+        onTimeslotClick = { onClickSpy }
+        momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 28, 11]) }
+      />
+    );
+
+    const timeslot = component.find('.tsc-timeslot--disabled');
+
+    expect(timeslot).toHaveLength(12);
   });
 
 });

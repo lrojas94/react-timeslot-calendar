@@ -26,6 +26,7 @@ describe('Render tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         weekToRender = { weeks[0] }
         onTimeslotClick = { onClickSpy }
+        initialDate = { moment([2017, 3, 28]) }
       />
     )
     .toJSON();
@@ -42,6 +43,7 @@ describe('Render tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         weekToRender = { weeks[0].slice(0, 3) }
         onTimeslotClick = { onClickSpy }
+        initialDate = { moment([2017, 3, 28]) }
       />
     );
 
@@ -59,10 +61,11 @@ describe('Render tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         weekToRender = { weeks[0] }
         onTimeslotClick = { onClickSpy }
+        initialDate = { moment([2017, 1, 1]) }
       />
     );
 
-    const timeslot = component.find(Timeslot).first();
+    const timeslot = component.find(Timeslot).not('.tsc-timeslot--disabled').first();
     timeslot.simulate('click');
 
     expect(onClickSpy).toHaveProperty('callCount', 1);

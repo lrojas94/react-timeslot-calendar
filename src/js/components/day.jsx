@@ -9,6 +9,11 @@ import {
   DEFAULT_TIMESLOT_SHOW_FORMAT,
 } from '../constants/day.js';
 
+import {
+  DEFAULT,
+  DISABLED,
+} from '../constants/timeslot.js';
+
 export default class Day extends React.Component {
 
   render() {
@@ -39,9 +44,11 @@ export default class Day extends React.Component {
 
   _renderTimeSlots() {
     const {
+      timeslots,
       timeslotFormat,
       timeslotShowFormat,
-      timeslots,
+      momentTime,
+      initialDate,
     } = this.props;
 
     return timeslots.map((slot, index) => {
@@ -52,11 +59,21 @@ export default class Day extends React.Component {
           description += ' - ';
         }
       }
+      let timeslotDate = momentTime.clone();
+      timeslotDate.add(slot[0], timeslotFormat);
+
+      let status = DEFAULT;
+      if (timeslotDate.isBefore(initialDate) || timeslotDate.isSame(initialDate)) {
+        status = DISABLED;
+      }
+
+
       return (
         <Timeslot
           key = { index }
           description = { description }
           onClick = { this._onTimeslotClick.bind(this, index) }
+          status = { status }
         />
       );
     });
@@ -88,10 +105,11 @@ Day.defaultProps = {
  * @type {Object} momentTime: MomentJS datetime object.
  */
 Day.propTypes = {
+  timeslots: PropTypes.array.isRequired,
   timeslotFormat: PropTypes.string.isRequired,
   timeslotShowFormat: PropTypes.string.isRequired,
-  timeslots: PropTypes.array.isRequired,
   onTimeslotClick: PropTypes.func.isRequired,
   renderTitle: PropTypes.func.isRequired,
   momentTime: PropTypes.object.isRequired,
+  initialDate: PropTypes.object.isRequired,
 };
