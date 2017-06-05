@@ -5,7 +5,6 @@ import moment from 'moment';
 import '../../styles/main.scss';
 
 import ReactTimeslotCalendar from './../react-timeslot-calendar.jsx';
-import { DEFAULT_TIMESLOTS } from './../constants/day';
 
 export default class App extends React.Component {
   render() {
@@ -14,7 +13,6 @@ export default class App extends React.Component {
         React Timeslot Calendar!
         <ReactTimeslotCalendar
           initialDate = { moment().format() }
-          timeslots = { DEFAULT_TIMESLOTS }
         />
       </div>
     );
