@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import moment from 'moment';
 import helpers from './../util/helpers';
 import Day from './day.jsx';
 
@@ -31,12 +30,12 @@ export default class Week extends React.Component {
     });
   }
 
-  _onTimeslotClick(index) {
+  _onTimeslotClick() {
     const {
       onTimeslotClick,
     } = this.props;
 
-    onTimeslotClick(index);
+    return onTimeslotClick();
   }
 }
 
