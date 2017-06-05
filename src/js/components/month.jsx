@@ -77,6 +77,7 @@ export default class Month extends React.Component {
 
     const {
       weeks,
+      initialDate,
       timeslots,
     } = this.props;
 
@@ -84,6 +85,7 @@ export default class Month extends React.Component {
       <Week
         weekToRender = { weeks[currentWeekIndex] }
         onTimeslotClick = { () => {} }
+        initialDate = { initialDate }
         timeslots = { timeslots }
       />
     );
@@ -155,5 +157,6 @@ Month.propTypes = {
   currentDate: PropTypes.object.isRequired,
   weeks: PropTypes.array.isRequired,
   onWeekOutOfMonth: PropTypes.func,
+  initialDate: PropTypes.string.isRequired,
   timeslots : PropTypes.array.isRequired,
 };

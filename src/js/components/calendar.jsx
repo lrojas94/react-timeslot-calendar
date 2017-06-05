@@ -52,6 +52,7 @@ export default class Calendar extends React.Component {
 
     const {
       timeslots,
+      initialDate,
     } = this.props;
 
     const cal = new CalendarJS(currentDate.year(), currentDate.month() + 1);
@@ -60,6 +61,7 @@ export default class Calendar extends React.Component {
     return (
       <Month
         currentDate = { currentDate }
+        initialDate = { initialDate }
         weeks = { weeks }
         onWeekOutOfMonth = { this._onWeekOutOfMonth.bind(this) }
         onTimeslotSelected = { this._onTimeslotSelected.bind(this) }

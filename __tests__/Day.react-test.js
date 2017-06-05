@@ -16,8 +16,9 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Day
         timeslots = { DEFAULT_TIMESLOTS }
-      onTimeslotClick = { onClickSpy }
-      momentTime = { moment([2017, 3, 28]) }
+        onTimeslotClick = { onClickSpy }
+        momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 28]).format() }
       />
     )
     .toJSON();
@@ -35,10 +36,10 @@ describe('Render tests', () => {
 
     const tree = renderer.create(
       <Day
-        timeslots = { DEFAULT_TIMESLOTS }
-      onTimeslotClick = { onClickSpy }
-      momentTime = { moment([2017, 3, 28]) }
-      timeslots = { timeslots }
+        timeslots = { timeslots }
+        onTimeslotClick = { onClickSpy }
+        momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 28]).format() }
       />
     )
     .toJSON();
@@ -56,10 +57,10 @@ describe('Render tests', () => {
 
     const tree = renderer.create(
       <Day
-        timeslots = { DEFAULT_TIMESLOTS }
+      timeslots = { timeslots }
       onTimeslotClick = { onClickSpy }
       momentTime = { moment([2017, 3, 28]) }
-      timeslots = { timeslots }
+      initialDate = { moment([2017, 3, 28]).format() }
       />
     )
     .toJSON();
@@ -78,6 +79,8 @@ describe('Functionality tests', () => {
         onTimeslotClick = { onClickSpy }
         renderTitle = { renderTitleSpy }
         momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 28]).format() }
+
       />
     );
 
@@ -91,10 +94,11 @@ describe('Functionality tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 27]).format() }
       />
     );
 
-    const timeslot = component.find(Timeslot).first();
+    const timeslot = component.find(Timeslot).not('.tsc-timeslot--disabled').first();
     timeslot.simulate('click');
 
     expect(onClickSpy).toHaveProperty('callCount', 1);
@@ -107,6 +111,7 @@ describe('Functionality tests', () => {
         timeslots = { DEFAULT_TIMESLOTS }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 1, 1]).format() }
       />
     );
 
@@ -123,16 +128,32 @@ describe('Functionality tests', () => {
     ];
     const component = shallow(
       <Day
-        timeslots = { DEFAULT_TIMESLOTS }
+        timeslots = { timeslots }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
-        timeslots = { timeslots }
+        initialDate = { moment([2017, 3, 28]).format() }
       />
     );
 
     const timeslot = component.find(Timeslot);
 
     expect(timeslot).toHaveLength(2);
+  });
+
+  test('Expect 12 disabled timeslots', () => {
+    const onClickSpy = sinon.spy();
+    const component = mount(
+      <Day
+        timeslots = { DEFAULT_TIMESLOTS }
+        onTimeslotClick = { onClickSpy }
+        momentTime = { moment([2017, 3, 28]) }
+        initialDate = { moment([2017, 3, 28, 11]).format() }
+      />
+    );
+
+    const timeslot = component.find('.tsc-timeslot--disabled');
+
+    expect(timeslot).toHaveLength(12);
   });
 
 });
