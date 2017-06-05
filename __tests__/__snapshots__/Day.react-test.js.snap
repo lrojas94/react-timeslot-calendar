@@ -8,7 +8,7 @@ exports[`Render tests Renders Correctly if timeslots is an array of array. 1`] =
     className="tsc-day__title"
   >
     <span>
-      Sunday (4th)
+      Sunday (4)
     </span>
   </div>
   <div
@@ -40,7 +40,7 @@ exports[`Render tests Renders Correctly if timeslots is an array of strings. 1`]
     className="tsc-day__title"
   >
     <span>
-      Sunday (4th)
+      Sunday (4)
     </span>
   </div>
   <div
@@ -72,7 +72,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
     className="tsc-day__title"
   >
     <span>
-      Sunday (4th)
+      Sunday (4)
     </span>
   </div>
   <div

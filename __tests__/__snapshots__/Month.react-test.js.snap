@@ -8,7 +8,7 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
     className="tsc-month__title"
   >
     <span>
-      June
+      April
     </span>
   </div>
   <div
@@ -23,7 +23,7 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
     <div
       className="tsc-month__action tsc-month__action-title"
     >
-      Jun 4th - Jun 10th
+      Mar 26th - Apr 1st
     </div>
     <div
       className="tsc-month__action tsc-month__action-element tsc-month__action-element--right"
@@ -42,7 +42,7 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Sunday (4th)
+          Sunday (26)
         </span>
       </div>
       <div
@@ -197,7 +197,7 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Monday (5th)
+          Monday (27)
         </span>
       </div>
       <div
@@ -352,7 +352,7 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Tuesday (6th)
+          Tuesday (28)
         </span>
       </div>
       <div
@@ -507,7 +507,7 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Wednesday (7th)
+          Wednesday (29)
         </span>
       </div>
       <div
@@ -662,7 +662,7 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Thursday (8th)
+          Thursday (30)
         </span>
       </div>
       <div
@@ -817,7 +817,7 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Friday (9th)
+          Friday (31)
         </span>
       </div>
       <div
@@ -972,7 +972,7 @@ exports[`Render tests Renders Correctly with all props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Saturday (10th)
+          Saturday (1)
         </span>
       </div>
       <div
@@ -1132,7 +1132,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
     className="tsc-month__title"
   >
     <span>
-      June
+      April
     </span>
   </div>
   <div
@@ -1147,7 +1147,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
     <div
       className="tsc-month__action tsc-month__action-title"
     >
-      Jun 4th - Jun 10th
+      Mar 26th - Apr 1st
     </div>
     <div
       className="tsc-month__action tsc-month__action-element tsc-month__action-element--right"
@@ -1166,7 +1166,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Sunday (4th)
+          Sunday (26)
         </span>
       </div>
       <div
@@ -1321,7 +1321,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Monday (5th)
+          Monday (27)
         </span>
       </div>
       <div
@@ -1476,7 +1476,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Tuesday (6th)
+          Tuesday (28)
         </span>
       </div>
       <div
@@ -1631,7 +1631,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Wednesday (7th)
+          Wednesday (29)
         </span>
       </div>
       <div
@@ -1786,7 +1786,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Thursday (8th)
+          Thursday (30)
         </span>
       </div>
       <div
@@ -1941,7 +1941,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Friday (9th)
+          Friday (31)
         </span>
       </div>
       <div
@@ -2096,7 +2096,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
         className="tsc-day__title"
       >
         <span>
-          Saturday (10th)
+          Saturday (1)
         </span>
       </div>
       <div

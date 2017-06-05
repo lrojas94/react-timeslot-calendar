@@ -12,7 +12,7 @@ import Week from '../src/js/components/week';
 import Day from '../src/js/components/day';
 import Timeslot from '../src/js/components/timeslot';
 
-const cal = new Calendar();
+const cal = new Calendar(2017, 4);
 
 describe('Render tests', () => {
   test('Renders Correctly with min props.', () => {

@@ -11,7 +11,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
       className="tsc-day__title"
     >
       <span>
-        Sunday (28th)
+        Sunday (26)
       </span>
     </div>
     <div
@@ -166,7 +166,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
       className="tsc-day__title"
     >
       <span>
-        Monday (29th)
+        Monday (27)
       </span>
     </div>
     <div
@@ -321,7 +321,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
       className="tsc-day__title"
     >
       <span>
-        Tuesday (30th)
+        Tuesday (28)
       </span>
     </div>
     <div
@@ -476,7 +476,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
       className="tsc-day__title"
     >
       <span>
-        Wednesday (31st)
+        Wednesday (29)
       </span>
     </div>
     <div
@@ -631,7 +631,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
       className="tsc-day__title"
     >
       <span>
-        Thursday (1st)
+        Thursday (30)
       </span>
     </div>
     <div
@@ -786,7 +786,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
       className="tsc-day__title"
     >
       <span>
-        Friday (2nd)
+        Friday (31)
       </span>
     </div>
     <div
@@ -941,7 +941,7 @@ exports[`Render tests Renders Correctly with min props. 1`] = `
       className="tsc-day__title"
     >
       <span>
-        Saturday (3rd)
+        Saturday (1)
       </span>
     </div>
     <div
