@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import moment from 'moment';
 import helpers from './../util/helpers';
+import Week from './week.jsx';
 
 export default class Month extends React.Component {
   constructor(props) {
@@ -33,9 +32,11 @@ export default class Month extends React.Component {
   }
 
   render() {
+
     return (
       <div className = "tsc-month">
         { this._renderActions() }
+        { this._renderWeek() }
       </div>
     );
   }
@@ -52,7 +53,7 @@ export default class Month extends React.Component {
     const currentWeek = weeks[currentWeekIndex];
     const startDate = helpers.getMomentFromCalendarJSDateElement(currentWeek[0]);
     const endDate = helpers.getMomentFromCalendarJSDateElement(currentWeek[currentWeek.length - 1]);
-    const actionTitle = `${startDate.format('Do')} - ${endDate.format('Do')}`;
+    const actionTitle = `${startDate.format('MMM Do')} - ${endDate.format('MMM Do')}`;
 
     return (
       <div className = "tsc-month__actions">
@@ -66,6 +67,23 @@ export default class Month extends React.Component {
           &#8250;
         </div>
       </div>
+    );
+  }
+
+  _renderWeek() {
+    const {
+      currentWeekIndex,
+    } = this.state;
+
+    const {
+      weeks,
+    } = this.props;
+
+    return (
+      <Week
+        weekToRender = { weeks[currentWeekIndex] }
+        onTimeslotClick = { () => {} }
+      />
     );
   }
 

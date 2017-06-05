@@ -1,0 +1,12 @@
+.tsc-week {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+@media only screen and (max-width: 767px) {
+  .tsc-week {
+    flex-direction: column;
+  }
+}
