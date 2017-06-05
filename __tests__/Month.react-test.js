@@ -9,7 +9,7 @@ import {
 import Month from '../src/js/components/month';
 import helpers from '../src/js/util/helpers';
 
-const cal = new Calendar();
+const cal = new Calendar(2017, 4);
 
 describe('Render tests', () => {
   test('Renders Correctly with min props.', () => {
@@ -17,7 +17,7 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Month
         weeks = { weeks }
-        date = { moment() }
+        date = { moment([2017, 3, 1]) }
       />
     )
     .toJSON();
@@ -32,7 +32,7 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Month
         weeks = { weeks }
-        date = { moment() }
+        date = { moment([2017, 3, 1]) }
         onGoToPrevMonth = { onGoToPrevMonth }
         onGoToNextMonth = { onGoToNextMonth }
       />
@@ -46,7 +46,7 @@ describe('Render tests', () => {
 describe('Functionality tests', () => {
   test('Current week contains date', () => {
     const weeks = cal.generate();
-    const date = moment();
+    const date = moment([2017, 3, 1]);
     const component = mount(
       <Month
         weeks = { weeks }
@@ -72,7 +72,7 @@ describe('Functionality tests', () => {
 
   test('onGoToPrevMonth callback called if date is start of the month and user tries to go back', () => {
     const weeks = cal.generate();
-    const date = moment().startOf('month');
+    const date = moment([2017, 3, 1]).startOf('month');
     const onGoToPrevMonth = sinon.spy();
     const component = mount(
       <Month
@@ -88,7 +88,7 @@ describe('Functionality tests', () => {
 
   test('onGoToNextMonth callback called if date is end of the month and user tries to go next', () => {
     const weeks = cal.generate();
-    const date = moment().endOf('month');
+    const date = moment([2017, 3, 1]).endOf('month');
     const onGoToNextMonth = sinon.spy();
     const component = mount(
       <Month
@@ -104,7 +104,7 @@ describe('Functionality tests', () => {
 
   test('Users can go to next week if available', () => {
     const weeks = cal.generate();
-    const date = moment().startOf('month');
+    const date = moment([2017, 3, 1]).startOf('month');
     const component = mount(
       <Month
         weeks = { weeks }
@@ -119,7 +119,7 @@ describe('Functionality tests', () => {
 
   test('Users can go to prev week if available', () => {
     const weeks = cal.generate();
-    const date = moment().endOf('month');
+    const date = moment([2017, 3, 1]).endOf('month');
     const component = mount(
       <Month
         weeks = { weeks }

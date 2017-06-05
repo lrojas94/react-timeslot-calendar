@@ -77,7 +77,7 @@ Day.defaultProps = {
   timeslotShowFormat: DEFAULT_TIMESLOT_SHOW_FORMAT,
   timeslots: DEFAULT_TIMESLOTS,
   renderTitle: (momentTime) => {
-    return momentTime.format('dddd (Do)');
+    return momentTime.format('dddd (D)');
   },
 };
 
