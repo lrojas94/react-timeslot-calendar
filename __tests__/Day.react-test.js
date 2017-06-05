@@ -15,7 +15,7 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Day
       onTimeslotClick = { onClickSpy }
-      momentTime = { moment() }
+      momentTime = { moment([2017, 3, 28]) }
       />
     )
     .toJSON();
@@ -34,7 +34,7 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Day
       onTimeslotClick = { onClickSpy }
-      momentTime = { moment() }
+      momentTime = { moment([2017, 3, 28]) }
       timeslots = { timeslots }
       />
     )
@@ -54,7 +54,7 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Day
       onTimeslotClick = { onClickSpy }
-      momentTime = { moment() }
+      momentTime = { moment([2017, 3, 28]) }
       timeslots = { timeslots }
       />
     )
@@ -72,7 +72,7 @@ describe('Functionality tests', () => {
       <Day
         onTimeslotClick = { onClickSpy }
         renderTitle = { renderTitleSpy }
-        momentTime = { moment() }
+        momentTime = { moment([2017, 3, 28]) }
       />
     );
 
@@ -84,7 +84,7 @@ describe('Functionality tests', () => {
     const component = mount(
       <Day
         onTimeslotClick = { onClickSpy }
-        momentTime = { moment() }
+        momentTime = { moment([2017, 3, 28]) }
       />
     );
 
@@ -99,7 +99,7 @@ describe('Functionality tests', () => {
     const component = shallow(
       <Day
         onTimeslotClick = { onClickSpy }
-        momentTime = { moment() }
+        momentTime = { moment([2017, 3, 28]) }
       />
     );
 
@@ -117,7 +117,7 @@ describe('Functionality tests', () => {
     const component = shallow(
       <Day
         onTimeslotClick = { onClickSpy }
-        momentTime = { moment() }
+        momentTime = { moment([2017, 3, 28]) }
         timeslots = { timeslots }
       />
     );
