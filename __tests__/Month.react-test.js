@@ -27,14 +27,12 @@ describe('Render tests', () => {
 
   test('Renders Correctly with all props.', () => {
     const weeks = cal.generate();
-    const onGoToNextMonth = sinon.spy();
-    const onGoToPrevMonth = sinon.spy();
+    const onWeekOutOfMonth = sinon.spy();
     const tree = renderer.create(
       <Month
         weeks = { weeks }
         date = { moment() }
-        onGoToPrevMonth = { onGoToPrevMonth }
-        onGoToNextMonth = { onGoToNextMonth }
+        onWeekOutOfMonth = { onWeekOutOfMonth }
       />
     )
     .toJSON();
@@ -70,36 +68,36 @@ describe('Functionality tests', () => {
     expect(component.state().currentWeekIndex).toEqual(weekIndex);
   });
 
-  test('onGoToPrevMonth callback called if date is start of the month and user tries to go back', () => {
+  test('onWeekOutOfMonth callback called if date is start of the month and user tries to go back', () => {
     const weeks = cal.generate();
     const date = moment().startOf('month');
-    const onGoToPrevMonth = sinon.spy();
+    const onWeekOutOfMonth = sinon.spy();
     const component = mount(
       <Month
         weeks = { weeks }
         date = { date }
-        onGoToPrevMonth = { onGoToPrevMonth }
+        onWeekOutOfMonth = { onWeekOutOfMonth }
       />
     );
 
     component.find('.tsc-month__action-element--left').simulate('click');
-    expect(onGoToPrevMonth).toHaveProperty('callCount', 1);
+    expect(onWeekOutOfMonth).toHaveProperty('callCount', 1);
   });
 
-  test('onGoToNextMonth callback called if date is end of the month and user tries to go next', () => {
+  test('onWeekOutOfMonth callback called if date is end of the month and user tries to go next', () => {
     const weeks = cal.generate();
     const date = moment().endOf('month');
-    const onGoToNextMonth = sinon.spy();
+    const onWeekOutOfMonth = sinon.spy();
     const component = mount(
       <Month
         weeks = { weeks }
         date = { date }
-        onGoToNextMonth = { onGoToNextMonth }
+        onWeekOutOfMonth = { onWeekOutOfMonth }
       />
     );
 
     component.find('.tsc-month__action-element--right').simulate('click');
-    expect(onGoToNextMonth).toHaveProperty('callCount', 1);
+    expect(onWeekOutOfMonth).toHaveProperty('callCount', 1);
   });
 
   test('Users can go to next week if available', () => {
