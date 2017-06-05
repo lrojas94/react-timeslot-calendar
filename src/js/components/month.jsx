@@ -8,11 +8,12 @@ export default class Month extends React.Component {
   constructor(props) {
     super(props);
 
-    const {
-      date,
-      weeks,
-    } = this.props;
+    this.state = {
+      currentWeekIndex: this._getStartingWeek(props.date, props.weeks),
+    };
+  }
 
+  _getStartingWeek(date, weeks) {
     // find out staring week:
     const dateWithoutTime = date.startOf('day');
     let startingWeek  = 0;
@@ -26,31 +27,15 @@ export default class Month extends React.Component {
         startingWeek = index;
         return weekContainsDate;
       }
-
     });
 
-    this.state = {
-      currentWeekIndex: startingWeek,
-    };
+    return startingWeek;
   }
 
   render() {
     return (
       <div className = "tsc-month">
-        { this._renderTitle() }
         { this._renderActions() }
-      </div>
-    );
-  }
-
-  _renderTitle() {
-    const {
-      date,
-    } = this.props;
-
-    return (
-      <div className = "tsc-month__title">
-        <span>{ date.format('MMMM') }</span>
       </div>
     );
   }
@@ -93,7 +78,8 @@ export default class Month extends React.Component {
     } = this.state;
 
     const {
-      onGoToPrevMonth,
+      onWeekOutOfMonth,
+      weeks,
     } = this.props;
 
     if (currentWeekIndex - 1 >= 0) {
@@ -101,8 +87,9 @@ export default class Month extends React.Component {
         currentWeekIndex: currentWeekIndex - 1,
       });
     }
-    else if (onGoToPrevMonth) {
-      onGoToPrevMonth();
+    else if (onWeekOutOfMonth) {
+      const firstDayOfPrevWeek = helpers.getMomentFromCalendarJSDateElement(weeks[0][0]).subtract(1, 'days');
+      onWeekOutOfMonth(firstDayOfPrevWeek);
     }
   }
 
@@ -116,7 +103,7 @@ export default class Month extends React.Component {
 
     const {
       weeks,
-      onGoToNextMonth,
+      onWeekOutOfMonth,
     } = this.props;
 
     if (currentWeekIndex + 1 < weeks.length) {
@@ -124,21 +111,27 @@ export default class Month extends React.Component {
         currentWeekIndex: currentWeekIndex + 1,
       });
     }
-    else if (onGoToNextMonth) {
-      onGoToNextMonth();
+    else if (onWeekOutOfMonth) {
+      const lastDay = weeks[currentWeekIndex].length - 1;
+      const firstDayOfNextWeek = helpers.getMomentFromCalendarJSDateElement(weeks[currentWeekIndex][lastDay]).add(1, 'days');
+      onWeekOutOfMonth(firstDayOfNextWeek);
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      currentWeekIndex: this._getStartingWeek(nextProps.date, nextProps.weeks),
+    });
   }
 }
 
 /**
 * @type {Object} date: Base date to get the month from - Usually first day of the month
 * @type {Array} weeks: A list of weeks based on calendarJS
-* @type {Function} onGoToNextMonth: A callback to call when user goes out of the month to next month
-* @type {Function} onGoToPrevMonth: A callback to call when user goes out of the month to prev month
+* @type {Function} onWeekOutOfMonth: A callback to call when user goes out of the month
  */
 Month.propTypes = {
   date: PropTypes.object.isRequired,
   weeks: PropTypes.array.isRequired,
-  onGoToNextMonth: PropTypes.func,
-  onGoToPrevMonth: PropTypes.func,
+  onWeekOutOfMonth: PropTypes.func,
 };
