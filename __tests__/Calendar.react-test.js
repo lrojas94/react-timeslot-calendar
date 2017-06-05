@@ -9,7 +9,7 @@ describe('Render tests', () => {
   test('Renders Correctly.', () => {
     const tree = renderer.create(
       <Calendar
-        initialDate = { moment().format() }
+        initialDate = { moment([2017, 3, 28]).format() }
         timeslots = { DEFAULT_TIMESLOTS }
       />
     )

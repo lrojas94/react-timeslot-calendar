@@ -16,7 +16,7 @@ exports[`Render tests Renders Correctly. 1`] = `
     <div
       className="tsc-calendar__action tsc-calendar__action-title"
     >
-      June - 2017
+      April - 2017
     </div>
     <div
       className="tsc-calendar__action tsc-calendar__action-element tsc-calendar__action-element--right"
@@ -40,7 +40,7 @@ exports[`Render tests Renders Correctly. 1`] = `
       <div
         className="tsc-month__action tsc-month__action-title"
       >
-        Jun 4th - Jun 10th
+        Apr 23rd - Apr 29th
       </div>
       <div
         className="tsc-month__action tsc-month__action-element tsc-month__action-element--right"
@@ -59,7 +59,7 @@ exports[`Render tests Renders Correctly. 1`] = `
           className="tsc-day__title"
         >
           <span>
-            Sunday (4)
+            Sunday (23)
           </span>
         </div>
         <div
@@ -214,7 +214,7 @@ exports[`Render tests Renders Correctly. 1`] = `
           className="tsc-day__title"
         >
           <span>
-            Monday (5)
+            Monday (24)
           </span>
         </div>
         <div
@@ -369,7 +369,7 @@ exports[`Render tests Renders Correctly. 1`] = `
           className="tsc-day__title"
         >
           <span>
-            Tuesday (6)
+            Tuesday (25)
           </span>
         </div>
         <div
@@ -524,7 +524,7 @@ exports[`Render tests Renders Correctly. 1`] = `
           className="tsc-day__title"
         >
           <span>
-            Wednesday (7)
+            Wednesday (26)
           </span>
         </div>
         <div
@@ -679,7 +679,7 @@ exports[`Render tests Renders Correctly. 1`] = `
           className="tsc-day__title"
         >
           <span>
-            Thursday (8)
+            Thursday (27)
           </span>
         </div>
         <div
@@ -834,7 +834,7 @@ exports[`Render tests Renders Correctly. 1`] = `
           className="tsc-day__title"
         >
           <span>
-            Friday (9)
+            Friday (28)
           </span>
         </div>
         <div
@@ -989,7 +989,7 @@ exports[`Render tests Renders Correctly. 1`] = `
           className="tsc-day__title"
         >
           <span>
-            Saturday (10)
+            Saturday (29)
           </span>
         </div>
         <div

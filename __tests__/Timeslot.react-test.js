@@ -13,10 +13,14 @@ import {
   DISABLED,
 } from '../src/js/constants/timeslot';
 
+import { DEFAULT_TIMESLOTS } from '../src/js/constants/day';
+
+
 it('Renders Correctly with All props.', () => {
   const onClickSpy = sinon.spy();
   const tree = renderer.create(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       status = { DEFAULT }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
@@ -33,6 +37,7 @@ it('Renders when customClassNames prop is not provided', () => {
   const onClickSpy = sinon.spy();
   const tree = renderer.create(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       status = { DEFAULT }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
@@ -47,6 +52,7 @@ it('Renders when customClassNames is null', () => {
   const onClickSpy = sinon.spy();
   const tree = renderer.create(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       status = { DEFAULT }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
@@ -62,6 +68,7 @@ it('Assumes default status if not provided', () => {
   const onClickSpy = sinon.spy();
   const timeslot = mount(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
     />
@@ -74,6 +81,7 @@ it('Does not call parent onClick prop if status is Disabled', () => {
   const onClickSpy = sinon.spy();
   const timeslot = mount(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
       status = { DISABLED }
@@ -88,6 +96,7 @@ it('Does call parent onClick prop if status is Default', () => {
   const onClickSpy = sinon.spy();
   const timeslot = mount(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
       status = { DEFAULT }
@@ -102,6 +111,7 @@ it('Does call parent onClick prop if status is Selected', () => {
   const onClickSpy = sinon.spy();
   const timeslot = mount(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
       status = { SELECTED }
@@ -116,6 +126,7 @@ it('Has default tsc-timeslot class.', () => {
   const onClickSpy = sinon.spy();
   const timeslot = shallow(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
       status = { SELECTED }
@@ -129,6 +140,7 @@ it('Adds selected class when Status prop is Selected', () => {
   const onClickSpy = sinon.spy();
   const timeslot = shallow(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
       status = { SELECTED }
@@ -147,6 +159,7 @@ it('Adds all classes in customClassNames when customClassNames is an object', ()
 
   const timeslot = shallow(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
       status = { SELECTED }
@@ -165,6 +178,7 @@ it('Does not adds classes with value = false in customClassNames', () => {
 
   const timeslot = shallow(
     <Timeslot
+      timeslots = { DEFAULT_TIMESLOTS }
       onClick = { onClickSpy }
       description = "1:00 PM - 2:00 AM"
       status = { SELECTED }
