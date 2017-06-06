@@ -79,16 +79,26 @@ export default class Month extends React.Component {
       weeks,
       initialDate,
       timeslots,
+      selectedTimeslots,
     } = this.props;
 
     return (
       <Week
         weekToRender = { weeks[currentWeekIndex] }
-        onTimeslotClick = { () => {} }
+        onTimeslotClick = { this._onTimeslotClick.bind(this) }
         initialDate = { initialDate }
         timeslots = { timeslots }
+        selectedTimeslots = { selectedTimeslots }
       />
     );
+  }
+
+  _onTimeslotClick(timeslot) {
+    const {
+      onTimeslotClick,
+    } = this.props;
+
+    onTimeslotClick(timeslot);
   }
 
   /**
@@ -151,12 +161,17 @@ export default class Month extends React.Component {
 * @type {Object} currentDate: Base currentDate to get the month from - Usually first day of the month
 * @type {Array} weeks: A list of weeks based on calendarJS
 * @type {Function} onWeekOutOfMonth: A callback to call when user goes out of the month
-* @type {Array} timeslots An array of timeslots to be displayed in each day.
+* @type {Function} onTimeslotClick: Function to be excecuted when clicked.
+* @type {Object} initialDate: Moment JS Date used to initialize the Calendar and which progresses further into the tree.
+* @type {Array} timeslots: An array of timeslots to be displayed in each day.
+* @type {Array} selectedTimeslots: Selected Timeslots Set used further into the tree to add the classes needed to when renderizing timeslots.
  */
 Month.propTypes = {
   currentDate: PropTypes.object.isRequired,
   weeks: PropTypes.array.isRequired,
   onWeekOutOfMonth: PropTypes.func,
+  onTimeslotClick: PropTypes.func,
   initialDate: PropTypes.object.isRequired,
   timeslots : PropTypes.array.isRequired,
+  selectedTimeslots: PropTypes.array,
 };

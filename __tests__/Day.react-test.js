@@ -19,6 +19,7 @@ describe('Render tests', () => {
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 28]) }
+        selectedTimeslots = { [] }
       />
     )
     .toJSON();
@@ -40,6 +41,7 @@ describe('Render tests', () => {
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 28]) }
+        selectedTimeslots = { [] }
       />
     )
     .toJSON();
@@ -61,6 +63,7 @@ describe('Render tests', () => {
       onTimeslotClick = { onClickSpy }
       momentTime = { moment([2017, 3, 28]) }
       initialDate = { moment([2017, 3, 28]) }
+      selectedTimeslots = { [] }
       />
     )
     .toJSON();
@@ -80,6 +83,7 @@ describe('Functionality tests', () => {
         renderTitle = { renderTitleSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 28]) }
+        selectedTimeslots = { [] }
       />
     );
 
@@ -94,10 +98,11 @@ describe('Functionality tests', () => {
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 27]) }
+        selectedTimeslots = { [] }
       />
     );
 
-    const timeslot = component.find(Timeslot).not('.tsc-timeslot--disabled').first();
+    const timeslot = component.find('.tsc-timeslot').not('.tsc-timeslot--disabled').first();
     timeslot.simulate('click');
 
     expect(onClickSpy).toHaveProperty('callCount', 1);
@@ -111,6 +116,7 @@ describe('Functionality tests', () => {
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 1, 1]) }
+        selectedTimeslots = { [] }
       />
     );
 
@@ -131,6 +137,7 @@ describe('Functionality tests', () => {
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 28]) }
+        selectedTimeslots = { [] }
       />
     );
 
@@ -147,6 +154,7 @@ describe('Functionality tests', () => {
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 28, 11]) }
+        selectedTimeslots = { [] }
       />
     );
 

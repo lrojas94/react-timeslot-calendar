@@ -21,6 +21,7 @@ describe('Render tests', () => {
         weeks = { weeks }
         currentDate = { moment([2017, 3, 1]) }
         initialDate = { moment([2017, 3, 28]) }
+        selectedTimeslots = { [] }
       />
     )
     .toJSON();
@@ -38,6 +39,7 @@ describe('Render tests', () => {
         currentDate = { moment([2017, 3, 1]) }
         initialDate = { moment([2017, 3, 28]) }
         onWeekOutOfMonth = { onWeekOutOfMonth }
+        selectedTimeslots = { [] }
       />
     )
     .toJSON();
@@ -56,6 +58,7 @@ describe('Functionality tests', () => {
         weeks = { weeks }
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
+        selectedTimeslots = { [] }
       />
     );
 
@@ -86,6 +89,7 @@ describe('Functionality tests', () => {
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
         onWeekOutOfMonth = { onWeekOutOfMonth }
+        selectedTimeslots = { [] }
       />
     );
 
@@ -104,6 +108,7 @@ describe('Functionality tests', () => {
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
         onWeekOutOfMonth = { onWeekOutOfMonth }
+        selectedTimeslots = { [] }
       />
     );
 
@@ -120,6 +125,7 @@ describe('Functionality tests', () => {
         weeks = { weeks }
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
+        selectedTimeslots = { [] }
       />
     );
     const weekIndexBeforeClick = component.state().currentWeekIndex;
@@ -137,6 +143,7 @@ describe('Functionality tests', () => {
         weeks = { weeks }
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
+        selectedTimeslots = { [] }
       />
     );
 

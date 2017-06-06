@@ -12,6 +12,7 @@ import {
 import {
   DEFAULT,
   DISABLED,
+  SELECTED,
 } from '../constants/timeslot.js';
 
 export default class Day extends React.Component {
@@ -45,6 +46,7 @@ export default class Day extends React.Component {
   _renderTimeSlots() {
     const {
       timeslots,
+      selectedTimeslots,
       timeslotFormat,
       timeslotShowFormat,
       momentTime,
@@ -67,6 +69,14 @@ export default class Day extends React.Component {
         status = DISABLED;
       }
 
+      const isSelected = selectedTimeslots.some((selectedTimeslot) => {
+        return timeslotDate.format() === selectedTimeslot.startDate.format();
+      });
+
+      if (isSelected) {
+        status = SELECTED;
+      }
+
 
       return (
         <Timeslot
@@ -81,10 +91,18 @@ export default class Day extends React.Component {
 
   _onTimeslotClick(index) {
     const {
+      timeslots,
+      timeslotFormat,
+      momentTime,
       onTimeslotClick,
     } = this.props;
 
-    onTimeslotClick(index);
+    const timeslot = {
+      startDate: momentTime.clone().add(timeslots[index][0], timeslotFormat),
+      endDate: momentTime.clone().add(timeslots[index][1], timeslotFormat),
+    };
+
+    onTimeslotClick(timeslot);
   }
 }
 
@@ -97,15 +115,18 @@ Day.defaultProps = {
 };
 
 /**
+ * @type {Array} timeslots: Array of timeslots.
+ * @type {Array} selectedTimslots: Selected Timeslots Set used to add the SELECTED class if needed when renderizing timeslots.
  * @type {String} timeslotFormat: format used by moment when identifying the timeslot
  * @type {String} timslotShowFormat: format to show used by moment when formating timeslot hours for final view.
- * @type {Array} timeslots: Array of timeslots.
  * @type {Function} onTimeslotClick: Function to be excecuted when clicked.
  * @type {Function} renderTitle: Function to be used when rendering the title.
  * @type {Object} momentTime: MomentJS datetime object.
+ * @type {Ojbect} initialDate: Moment JS Date used to initialize the Calendar and which progresses further into the tree.
  */
 Day.propTypes = {
   timeslots: PropTypes.array.isRequired,
+  selectedTimeslots: PropTypes.array,
   timeslotFormat: PropTypes.string.isRequired,
   timeslotShowFormat: PropTypes.string.isRequired,
   onTimeslotClick: PropTypes.func.isRequired,
