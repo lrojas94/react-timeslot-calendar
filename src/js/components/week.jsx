@@ -18,6 +18,7 @@ export default class Week extends React.Component {
       weekToRender,
       initialDate,
       timeslots,
+      selectedTimeslots,
     } = this.props;
 
     return weekToRender.map((day, index) => {
@@ -25,31 +26,36 @@ export default class Week extends React.Component {
       return (
         <Day
           key = { index }
-          onTimeslotClick = { this._onTimeslotClick.bind(this, index) }
+          onTimeslotClick = { this._onTimeslotClick.bind(this) }
           initialDate = { initialDate }
           timeslots = { timeslots }
+          selectedTimeslots = { selectedTimeslots }
           momentTime = { formattedDate }
           />
       );
     });
   }
 
-  _onTimeslotClick() {
+  _onTimeslotClick(timeslot) {
     const {
       onTimeslotClick,
     } = this.props;
 
-    onTimeslotClick();
+    onTimeslotClick(timeslot);
   }
 }
 
 /**
  * @type {Array} weekToRender: Week to render. Each day should also have the requested timeslots, unless default configuration is desired.
  * @type {Function} onTimeslotClick: Function to be excecuted when clicked.
+ * @type {Object} initialDate: Moment JS Date used to initialize the Calendar and which progresses further into the tree.
+ * @type {Array} timeslots: Timeslots Set of Timeslot elements to render. Progresses further into the tree.
+ * @type {Array} selectedTimeslots: Selected Timeslots Set used further into the tree to add the classes needed to when renderizing timeslots.
  */
 Week.propTypes = {
   weekToRender: PropTypes.array.isRequired,
   onTimeslotClick: PropTypes.func.isRequired,
   initialDate: PropTypes.object.isRequired,
   timeslots : PropTypes.array.isRequired,
+  selectedTimeslots: PropTypes.array,
 };
