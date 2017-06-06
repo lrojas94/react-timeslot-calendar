@@ -6,19 +6,26 @@ import Month from './month.jsx';
 
 export default class Calendar extends React.Component {
   constructor(props) {
-    const inputProps = {
-      names: {
-        startDate: 'tsc-startDate',
-        endDate: 'tsc-endDate',
-      },
+
+    const startDateInputProps = {
+      name: 'tsc-startDate',
       classes: 'tsc-hidden-input',
+      type: 'hidden',
+    };
+
+    const endDateInputProps = {
+      name: 'tsc-endDate',
+      class: 'tsc-hidden-input',
       type: 'hidden',
     };
 
     super(props);
 
-    this.inputProps = Object.assign({}, inputProps, this.props.inputProps);
-    this.inputProps.names = Object.assign(inputProps.names, this.props.inputProps.names);
+    this.inputProps = {
+      startDate: Object.assign({}, startDateInputProps, this.props.startDateInputProps),
+      endDate: Object.assign({}, endDateInputProps, this.props.endDateInputProps),
+    };
+
     this.state = {
       currentDate: moment(props.initialDate),
       selectedTimeslots: [],
@@ -92,6 +99,11 @@ export default class Calendar extends React.Component {
       selectedTimeslots,
     } = this.state;
 
+    const {
+      startDate,
+      endDate,
+    } = this.inputProps;
+
     //Determines if multiple input or single one.
     const inputPrefix = selectedTimeslots.length > 1 ? '[]' : '';
 
@@ -99,15 +111,15 @@ export default class Calendar extends React.Component {
       return (
         <div key = { index } >
           <input
-            name = { this.inputProps.names.startDate + inputPrefix }
-            className = { this.inputProps.classes }
-            type = { this.inputProps.type }
+            name = { startDate.name + inputPrefix }
+            className = { startDate.class }
+            type = { startDate.type }
             value = { timeslot.startDate.format('MMMM Do YYYY, h:mm:ss A') }
           />
           <input
-            name = { this.inputProps.names.endDate + inputPrefix }
-            className = { this.inputProps.classes }
-            type = { this.inputProps.type }
+            name = { endDate.name + inputPrefix }
+            className = { endDate.class }
+            type = { endDate.type }
             value = { timeslot.endDate.format('MMMM Do YYYY, h:mm:ss A') }
           />
         </div>
@@ -193,6 +205,8 @@ Calendar.defaultProps = {
   inputProps: {
     names: {},
   },
+  startDateInputProps: {},
+  endDateInputProps: {},
 };
 
 /**
@@ -200,7 +214,8 @@ Calendar.defaultProps = {
  * @type {Array} timeslots:  An array of timeslots to be displayed in each day.
  * @type {string} selectedTimeslot: Initial value for timeslot input.
  * @type {Integer} maxTimexlots: maximum ammount of timeslots to select.
- * @type {Object} inputProps: properties for the Inputs.
+ * @type {Object} startDateInputProps: properties for the startDate Inputs. Includes name, class, type (hidden, text...)
+ * @type {Object} endDateInputProps: properties for the endDate Inputs. Includes name, class, type (hidden, text...)
  */
 Calendar.propTypes = {
   initialDate: PropTypes.string.isRequired,
@@ -208,4 +223,6 @@ Calendar.propTypes = {
   selectedTimeslots: PropTypes.string,
   maxTimeslots: PropTypes.number,
   inputProps: PropTypes.object,
+  startDateInputProps: PropTypes.object,
+  endDateInputProps: PropTypes.object,
 };

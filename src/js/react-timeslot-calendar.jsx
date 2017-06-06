@@ -22,7 +22,6 @@ export default class ReactTimeslotCalendar extends React.Component {
         initialDate = { initialDate }
         timeslots = { timeslots }
         selectedTimeslot = { selectedTimeslot }
-        maxTimeslots = { 2 }
       />
     );
   }

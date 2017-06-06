@@ -74,10 +74,8 @@ describe('Render tests', () => {
       <Calendar
         initialDate = { moment().format() }
         timeslots = { DEFAULT_TIMESLOTS }
-        inputProps = { {
-          names: {
-            startDate: 'custom-startDate',
-          },
+        startDateInputProps = { {
+          name: 'custom-startDate',
         } }
       />
     );
