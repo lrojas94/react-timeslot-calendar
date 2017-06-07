@@ -106,4 +106,34 @@ describe('Render tests', () => {
 
     expect(inputs).toHaveLength(4);
   });
+
+  test('Expects 3 disabled timeslots based on props sent.', () => {
+    const component = mount(
+      <Calendar
+        initialDate = { moment([2017, 3, 30]).format() }
+        timeslots = { DEFAULT_TIMESLOTS }
+        disabledTimeslots = { [
+          {
+            startDate: 'April 30th 2017, 12:00:00 AM',
+            endDate: 'April 30th 2017, 1:00:00 AM',
+            format: 'MMMM Do YYYY, h:mm:ss A',
+          },
+          {
+            startDate: 'May 1st 2017, 3:00:00 PM',
+            endDate: 'May 1st 2017, 4:00:00 PM',
+            format: 'MMMM Do YYYY, h:mm:ss A',
+          },
+          {
+            startDate: 'May 5th 2017, 6:00:00 PM',
+            endDate: 'May 5th 2017, 7:00:00 PM',
+            format: 'MMMM Do YYYY, h:mm:ss A',
+          },
+        ] }
+      />
+    );
+
+    const disabledTimeslots = component.findWhere(timeslot => timeslot.prop('status') == 'DISABLED');
+
+    expect(disabledTimeslots).toHaveLength(3);
+  });
 });

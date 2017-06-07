@@ -8,7 +8,11 @@ import {
 } from 'enzyme';
 import Day from '../src/js/components/day';
 import Timeslot from '../src/js/components/timeslot';
-import { DEFAULT_TIMESLOTS } from '../src/js/constants/day';
+import {
+  DEFAULT_TIMESLOTS,
+  DEFAULT_TIMESLOT_FORMAT,
+  DEFAULT_TIMESLOT_SHOW_FORMAT,
+} from '../src/js/constants/day';
 
 describe('Render tests', () => {
   test('Renders Correctly with min props.', () => {
@@ -16,6 +20,11 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Day
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 28]) }
@@ -38,6 +47,11 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Day
         timeslots = { timeslots }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 28]) }
@@ -60,6 +74,11 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Day
       timeslots = { timeslots }
+      timeslotProps = { {
+        format: DEFAULT_TIMESLOT_FORMAT,
+        showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+      } }
+      disabledTimeslots = { [] }
       onTimeslotClick = { onClickSpy }
       momentTime = { moment([2017, 3, 28]) }
       initialDate = { moment([2017, 3, 28]) }
@@ -79,6 +98,11 @@ describe('Functionality tests', () => {
     const component = mount(
       <Day
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         onTimeslotClick = { onClickSpy }
         renderTitle = { renderTitleSpy }
         momentTime = { moment([2017, 3, 28]) }
@@ -95,6 +119,11 @@ describe('Functionality tests', () => {
     const component = mount(
       <Day
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 27]) }
@@ -113,6 +142,11 @@ describe('Functionality tests', () => {
     const component = shallow(
       <Day
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 1, 1]) }
@@ -134,6 +168,11 @@ describe('Functionality tests', () => {
     const component = shallow(
       <Day
         timeslots = { timeslots }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 28]) }
@@ -151,6 +190,11 @@ describe('Functionality tests', () => {
     const component = mount(
       <Day
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         onTimeslotClick = { onClickSpy }
         momentTime = { moment([2017, 3, 28]) }
         initialDate = { moment([2017, 3, 28, 11]) }

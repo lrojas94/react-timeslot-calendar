@@ -46,9 +46,9 @@ export default class Day extends React.Component {
   _renderTimeSlots() {
     const {
       timeslots,
+      timeslotProps,
       selectedTimeslots,
-      timeslotFormat,
-      timeslotShowFormat,
+      disabledTimeslots,
       momentTime,
       initialDate,
     } = this.props;
@@ -56,13 +56,13 @@ export default class Day extends React.Component {
     return timeslots.map((slot, index) => {
       let description = '';
       for (let i = 0; i < slot.length; i ++){
-        description += moment(slot[i], timeslotFormat).format(timeslotShowFormat);
+        description += moment(slot[i], timeslotProps.format).format(timeslotProps.showFormat);
         if (i < (slot.length - 1)){
           description += ' - ';
         }
       }
       let timeslotDate = momentTime.clone();
-      timeslotDate.add(slot[0], timeslotFormat);
+      timeslotDate.add(slot[0], timeslotProps.format);
 
       let status = DEFAULT;
       if (timeslotDate.isBefore(initialDate) || timeslotDate.isSame(initialDate)) {
@@ -73,7 +73,14 @@ export default class Day extends React.Component {
         return timeslotDate.format() === selectedTimeslot.startDate.format();
       });
 
-      if (isSelected) {
+      const isDisabled = disabledTimeslots.some((disabledTimeslot) => {
+        return timeslotDate.format() === disabledTimeslot.startDate.format();
+      });
+
+      if (isDisabled) {
+        status = DISABLED;
+      }
+      else if (isSelected) {
         status = SELECTED;
       }
 
@@ -116,7 +123,9 @@ Day.defaultProps = {
 
 /**
  * @type {Array} timeslots: Array of timeslots.
- * @type {Array} selectedTimslots: Selected Timeslots Set used to add the SELECTED class if needed when renderizing timeslots.
+ * @type {Object} timeslotProps: An object with keys and values for timeslot props (format, viewFormat)
+ * @type {Array} selectedTimeslots: Selected Timeslots Set used to add the SELECTED status if needed when renderizing timeslots.
+ * @type {Array} disabledTimeslots: Disabled Timeslots Set used to add the DISABLED status if needed when renderizing timeslots.
  * @type {String} timeslotFormat: format used by moment when identifying the timeslot
  * @type {String} timslotShowFormat: format to show used by moment when formating timeslot hours for final view.
  * @type {Function} onTimeslotClick: Function to be excecuted when clicked.
@@ -126,7 +135,9 @@ Day.defaultProps = {
  */
 Day.propTypes = {
   timeslots: PropTypes.array.isRequired,
+  timeslotProps: PropTypes.object,
   selectedTimeslots: PropTypes.array,
+  disabledTimeslots: PropTypes.array,
   timeslotFormat: PropTypes.string.isRequired,
   timeslotShowFormat: PropTypes.string.isRequired,
   onTimeslotClick: PropTypes.func.isRequired,

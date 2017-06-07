@@ -8,7 +8,11 @@ import {
 } from 'enzyme';
 import Month from '../src/js/components/month';
 import helpers from '../src/js/util/helpers';
-import { DEFAULT_TIMESLOTS } from '../src/js/constants/day';
+import {
+  DEFAULT_TIMESLOTS,
+  DEFAULT_TIMESLOT_FORMAT,
+  DEFAULT_TIMESLOT_SHOW_FORMAT,
+ } from '../src/js/constants/day';
 
 const cal = new Calendar(2017, 4);
 
@@ -18,6 +22,11 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Month
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weeks = { weeks }
         currentDate = { moment([2017, 3, 1]) }
         initialDate = { moment([2017, 3, 28]) }
@@ -35,6 +44,11 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Month
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weeks = { weeks }
         currentDate = { moment([2017, 3, 1]) }
         initialDate = { moment([2017, 3, 28]) }
@@ -55,6 +69,11 @@ describe('Functionality tests', () => {
     const component = mount(
       <Month
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weeks = { weeks }
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
@@ -85,6 +104,11 @@ describe('Functionality tests', () => {
     const component = mount(
       <Month
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weeks = { weeks }
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
@@ -104,6 +128,11 @@ describe('Functionality tests', () => {
     const component = mount(
       <Month
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weeks = { weeks }
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
@@ -122,6 +151,11 @@ describe('Functionality tests', () => {
     const component = mount(
       <Month
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weeks = { weeks }
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
@@ -140,6 +174,11 @@ describe('Functionality tests', () => {
     const component = mount(
       <Month
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weeks = { weeks }
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
