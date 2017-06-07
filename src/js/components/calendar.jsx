@@ -19,12 +19,19 @@ export default class Calendar extends React.Component {
       type: 'hidden',
     };
 
+    const timeslotProps = {
+      format: 'h',
+      showFormat: 'h:mm A',
+    };
+
     super(props);
 
     this.inputProps = {
       startDate: Object.assign({}, startDateInputProps, this.props.startDateInputProps),
       endDate: Object.assign({}, endDateInputProps, this.props.endDateInputProps),
     };
+
+    this.timeslotProps = Object.assign({}, timeslotProps, this.props.timeslotProps);
 
     this.state = {
       currentDate: moment(props.initialDate),
@@ -89,7 +96,10 @@ export default class Calendar extends React.Component {
         onWeekOutOfMonth = { this._onWeekOutOfMonth.bind(this) }
         onTimeslotClick = { this._onTimeslotClick.bind(this) }
         timeslots = { timeslots }
+        timeslotProps = { this.timeslotProps }
         selectedTimeslots = { selectedTimeslots }
+        disabledTimeslots = { this._formatDisabledTimeslots() }
+
       />
     );
   }
@@ -165,6 +175,20 @@ export default class Calendar extends React.Component {
     });
   }
 
+  _formatDisabledTimeslots() {
+    const {
+      disabledTimeslots,
+    } = this.props;
+
+    return disabledTimeslots.map((timeslot) => {
+      let timeslotMoment = Object.assign({}, timeslot);
+      timeslotMoment.startDate = moment(timeslotMoment.startDate, timeslotMoment.format);
+      timeslotMoment.endDate = moment(timeslotMoment.endDate, timeslotMoment.format);
+
+      return timeslotMoment;
+    });
+  }
+
   _onTimeslotClick(newTimeslot) {
     const {
       selectedTimeslots,
@@ -201,6 +225,7 @@ export default class Calendar extends React.Component {
 }
 
 Calendar.defaultProps = {
+  disabledTimeslots: [],
   maxTimeslots: 1,
   inputProps: {
     names: {},
@@ -212,7 +237,9 @@ Calendar.defaultProps = {
 /**
  * @type {String} initialDate:  The initial date in which to place the calendar. Must be MomentJS parseable.
  * @type {Array} timeslots:  An array of timeslots to be displayed in each day.
- * @type {string} selectedTimeslot: Initial value for timeslot input.
+ * @type {Object} timeslotProps: An object with keys and values for timeslot props (format, viewFormat)
+ * @type {Array} selectedTimeslots: Initial value for selected timeslot inputs. Expects Dates formatted as Strings.
+ * @type {Array} disabledTimeslots: Initial value for selected timeslot inputs. Expects Dates formatted as Strings.
  * @type {Integer} maxTimexlots: maximum ammount of timeslots to select.
  * @type {Object} startDateInputProps: properties for the startDate Inputs. Includes name, class, type (hidden, text...)
  * @type {Object} endDateInputProps: properties for the endDate Inputs. Includes name, class, type (hidden, text...)
@@ -220,7 +247,9 @@ Calendar.defaultProps = {
 Calendar.propTypes = {
   initialDate: PropTypes.string.isRequired,
   timeslots: PropTypes.array.isRequired,
-  selectedTimeslots: PropTypes.string,
+  timeslotProps: PropTypes.object,
+  selectedTimeslots: PropTypes.array,
+  disabledTimeslots: PropTypes.array,
   maxTimeslots: PropTypes.number,
   inputProps: PropTypes.object,
   startDateInputProps: PropTypes.object,

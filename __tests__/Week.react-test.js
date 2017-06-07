@@ -12,7 +12,11 @@ import Week from '../src/js/components/week';
 import Day from '../src/js/components/day';
 import Timeslot from '../src/js/components/timeslot';
 
-import { DEFAULT_TIMESLOTS } from '../src/js/constants/day';
+import {
+  DEFAULT_TIMESLOTS,
+  DEFAULT_TIMESLOT_FORMAT,
+  DEFAULT_TIMESLOT_SHOW_FORMAT,
+} from '../src/js/constants/day';
 
 const cal = new Calendar(2017, 4);
 
@@ -24,6 +28,11 @@ describe('Render tests', () => {
     const tree = renderer.create(
       <Week
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weekToRender = { weeks[0] }
         onTimeslotClick = { onClickSpy }
         initialDate = { moment([2017, 3, 28]) }
@@ -42,6 +51,11 @@ describe('Render tests', () => {
     const component = mount(
       <Week
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weekToRender = { weeks[0].slice(0, 3) }
         onTimeslotClick = { onClickSpy }
         initialDate = { moment([2017, 3, 28]) }
@@ -61,6 +75,11 @@ describe('Render tests', () => {
     const component = mount(
       <Week
         timeslots = { DEFAULT_TIMESLOTS }
+        timeslotProps = { {
+          format: DEFAULT_TIMESLOT_FORMAT,
+          showFormat:DEFAULT_TIMESLOT_SHOW_FORMAT,
+        } }
+        disabledTimeslots = { [] }
         weekToRender = { weeks[0] }
         onTimeslotClick = { onClickSpy }
         initialDate = { moment([2017, 1, 1]) }
