@@ -1,14 +1,15 @@
 {
   "name": "react-timeslot-calendar",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A calendar based on timeslots which can be set as available, occupied and so on.",
-  "main": "index.js",
+  "main": "build/build.min.js",
   "scripts": {
     "build": "npm run eslint && npm run prod",
-    "eslint": "./node_modules/.bin/eslint src/js/react-timeslot-calendar.jsx",
+    "eslint": "./node_modules/.bin/eslint src/js/**/*.jsx",
     "prod": "./node_modules/.bin/webpack -p --config webpack.config.js",
     "dev": "./node_modules/.bin/webpack-dev-server --config webpack.demo.config.js --hot",
-    "test": "npm run eslint && jest --verbose -e"
+    "test": "npm run eslint && jest --verbose -e",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "react",
@@ -17,6 +18,10 @@
     "scheduling",
     "schedule"
   ],
+  "repository" :{
+    "type" : "git",
+    "url" : "https://github.com/lrojas94/react-timeslot-calendar"
+  },
   "author": "Luis Rojas & Jaime Rojas",
   "license": "MIT",
   "devDependencies": {
