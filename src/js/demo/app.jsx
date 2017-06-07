@@ -13,6 +13,10 @@ export default class App extends React.Component {
         React Timeslot Calendar!
         <ReactTimeslotCalendar
           initialDate = { moment().format() }
+          renderDays = { {
+            sunday: false,
+            saturday: false,
+          } }
         />
       </div>
     );

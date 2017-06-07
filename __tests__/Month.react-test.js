@@ -8,6 +8,8 @@ import {
 } from 'enzyme';
 import Month from '../src/js/components/month';
 import helpers from '../src/js/util/helpers';
+
+import { RENDER_DAYS } from '../src/js/constants/week';
 import {
   DEFAULT_TIMESLOTS,
   DEFAULT_TIMESLOT_FORMAT,
@@ -31,6 +33,7 @@ describe('Render tests', () => {
         currentDate = { moment([2017, 3, 1]) }
         initialDate = { moment([2017, 3, 28]) }
         selectedTimeslots = { [] }
+        renderDays = { RENDER_DAYS }
       />
     )
     .toJSON();
@@ -54,6 +57,7 @@ describe('Render tests', () => {
         initialDate = { moment([2017, 3, 28]) }
         onWeekOutOfMonth = { onWeekOutOfMonth }
         selectedTimeslots = { [] }
+        renderDays = { RENDER_DAYS }
       />
     )
     .toJSON();
@@ -78,6 +82,7 @@ describe('Functionality tests', () => {
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
         selectedTimeslots = { [] }
+        renderDays = { RENDER_DAYS }
       />
     );
 
@@ -114,6 +119,7 @@ describe('Functionality tests', () => {
         initialDate = { moment([2017, 3, 28]) }
         onWeekOutOfMonth = { onWeekOutOfMonth }
         selectedTimeslots = { [] }
+        renderDays = { RENDER_DAYS }
       />
     );
 
@@ -138,6 +144,7 @@ describe('Functionality tests', () => {
         initialDate = { moment([2017, 3, 28]) }
         onWeekOutOfMonth = { onWeekOutOfMonth }
         selectedTimeslots = { [] }
+        renderDays = { RENDER_DAYS }
       />
     );
 
@@ -160,6 +167,7 @@ describe('Functionality tests', () => {
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
         selectedTimeslots = { [] }
+        renderDays = { RENDER_DAYS }
       />
     );
     const weekIndexBeforeClick = component.state().currentWeekIndex;
@@ -183,6 +191,7 @@ describe('Functionality tests', () => {
         currentDate = { currentDate }
         initialDate = { moment([2017, 3, 28]) }
         selectedTimeslots = { [] }
+        renderDays = { RENDER_DAYS }
       />
     );
 
