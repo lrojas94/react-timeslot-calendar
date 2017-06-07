@@ -221,13 +221,37 @@ export default class Calendar extends React.Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.inputProps = {
-      startDate: Object.assign({}, this.inputProps.startDateInputProps, nextProps.startDateInputProps),
-      endDate: Object.assign({}, this.inputProps.endDateInputProps, nextProps.endDateInputProps),
+  _updateInputProps(startDateInputProps, endDateInputProps) {
+    const defaultStartDateProps = {
+      name: 'tsc-startDate',
+      classes: 'tsc-hidden-input',
+      type: 'hidden',
     };
 
-    this.timeslotProps = Object.assign({}, this.timeslotProps, nextProps.timeslotProps);
+    const defaultEndDateProps = {
+      name: 'tsc-endDate',
+      classes: 'tsc-hidden-input',
+      type: 'hidden',
+    };
+
+    this.inputProps = {
+      startDate: Object.assign({}, defaultStartDateProps, startDateInputProps),
+      endDate: Object.assign({}, defaultEndDateProps, endDateInputProps),
+    };
+  }
+
+  _updateTimeslotProps(timeslotProps) {
+    const defaultProps = {
+      format: 'h',
+      showFormat: 'h:mm A',
+    };
+
+    this.timeslotProps = Object.assign({}, defaultProps, timeslotProps);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this._updateInputProps(nextProps.startDateInputProps, nextProps.endDateInputProps);
+    this._updateTimeslotProps(nextProps.timeslotProps);
   }
 
 }
