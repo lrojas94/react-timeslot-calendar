@@ -99,7 +99,6 @@ export default class Calendar extends React.Component {
         timeslotProps = { this.timeslotProps }
         selectedTimeslots = { selectedTimeslots }
         disabledTimeslots = { this._formatDisabledTimeslots() }
-
       />
     );
   }
@@ -220,6 +219,15 @@ export default class Calendar extends React.Component {
     this.setState({
       selectedTimeslots: newSelectedTimeslots,
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.inputProps = {
+      startDate: Object.assign({}, this.inputProps.startDateInputProps, nextProps.startDateInputProps),
+      endDate: Object.assign({}, this.inputProps.endDateInputProps, nextProps.endDateInputProps),
+    };
+
+    this.timeslotProps = Object.assign({}, this.timeslotProps, nextProps.timeslotProps);
   }
 
 }

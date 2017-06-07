@@ -23,7 +23,6 @@ ReactTimeslotCalendar.defaultProps = {
   timeslots: DEFAULT_TIMESLOTS,
 };
 
-/// A PEDIR -> Chicken Pockets + Smoothie (Fresa / Kiwi / Pinia)
 
 /**
  * @type {String} initialDate:  The initial date in which to place the calendar. Must be MomentJS parseable.
@@ -35,7 +34,7 @@ ReactTimeslotCalendar.defaultProps = {
  * @type {Object} startDateInputProps: properties for the startDate Inputs. Includes name, class, type (hidden, text...)
  * @type {Object} endDateInputProps: properties for the endDate Inputs. Includes name, class, type (hidden, text...)
  */
-Calendar.propTypes = {
+ReactTimeslotCalendar.propTypes = {
   initialDate: PropTypes.string.isRequired,
   timeslots: PropTypes.array.isRequired,
   timeslotProps: PropTypes.object,
