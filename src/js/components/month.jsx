@@ -82,6 +82,7 @@ export default class Month extends React.Component {
       timeslotProps,
       selectedTimeslots,
       disabledTimeslots,
+      renderDays,
     } = this.props;
 
     return (
@@ -93,6 +94,7 @@ export default class Month extends React.Component {
         timeslotProps = { timeslotProps }
         selectedTimeslots = { selectedTimeslots }
         disabledTimeslots = { disabledTimeslots }
+        renderDays = { renderDays }
       />
     );
   }
@@ -171,6 +173,7 @@ export default class Month extends React.Component {
 * @type {Object} timeslotProps: An object with keys and values for timeslot props (format, viewFormat)
 * @type {Array} selectedTimeslots: Selected Timeslots Set used further into the tree to add the classes needed to when renderizing timeslots.
 * @type {Array} DisabledTimeslots: Disabled Timeslots Set used further into the tree to add the classes needed to when renderizing timeslots.
+* @type {Object} renderDays: An array of days which states which days of the week to render. By default renders all days.
  */
 Month.propTypes = {
   currentDate: PropTypes.object.isRequired,
@@ -182,4 +185,5 @@ Month.propTypes = {
   timeslotProps: PropTypes.object,
   selectedTimeslots: PropTypes.array,
   disabledTimeslots: PropTypes.array,
+  renderDays: PropTypes.object,
 };

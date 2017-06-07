@@ -21,22 +21,25 @@ export default class Week extends React.Component {
       timeslotProps,
       selectedTimeslots,
       disabledTimeslots,
+      renderDays,
     } = this.props;
 
     return weekToRender.map((day, index) => {
       let formattedDate = helpers.getMomentFromCalendarJSDateElement(day);
-      return (
-        <Day
-          key = { index }
-          onTimeslotClick = { this._onTimeslotClick.bind(this) }
-          initialDate = { initialDate }
-          timeslots = { timeslots }
-          timeslotProps = { timeslotProps }
-          selectedTimeslots = { selectedTimeslots }
-          disabledTimeslots = { disabledTimeslots }
-          momentTime = { formattedDate }
-          />
-      );
+      if (renderDays[formattedDate.format('dddd').toLowerCase()]){
+        return (
+          <Day
+            key = { index }
+            onTimeslotClick = { this._onTimeslotClick.bind(this) }
+            initialDate = { initialDate }
+            timeslots = { timeslots }
+            timeslotProps = { timeslotProps }
+            selectedTimeslots = { selectedTimeslots }
+            disabledTimeslots = { disabledTimeslots }
+            momentTime = { formattedDate }
+            />
+        );
+      }
     });
   }
 
@@ -57,6 +60,7 @@ export default class Week extends React.Component {
  * @type {Object} timeslotProps: An object with keys and values for timeslot props (format, viewFormat)
  * @type {Array} selectedTimeslots: Selected Timeslots Set used further into the tree to add the classes needed to when renderizing timeslots.
  * @type {Array} disabledTimeslots: Disabled Timeslots Set used further into the tree to add the classes needed to when renderizing timeslots.
+ * @type {Object} renderDays: An array of days which states which days of the week to render. By default renders all days.
  */
 Week.propTypes = {
   weekToRender: PropTypes.array.isRequired,
@@ -66,4 +70,5 @@ Week.propTypes = {
   timeslotProps: PropTypes.object,
   selectedTimeslots: PropTypes.array,
   disabledTimeslots: PropTypes.array,
+  renderDays: PropTypes.object,
 };

@@ -11,6 +11,7 @@ export default class Calendar extends React.Component {
 
     this._updateInputProps(this.props.startDateInputProps, this.props.endDateInputProps);
     this._updateTimeslotProps(this.props.timeslotProps);
+    this._updateRenderDays(this.props.renderDays);
 
     this.state = {
       currentDate: moment(props.initialDate),
@@ -78,6 +79,7 @@ export default class Calendar extends React.Component {
         timeslotProps = { this.timeslotProps }
         selectedTimeslots = { selectedTimeslots }
         disabledTimeslots = { this._formatDisabledTimeslots() }
+        renderDays = { this.renderDays }
       />
     );
   }
@@ -228,6 +230,20 @@ export default class Calendar extends React.Component {
     this.timeslotProps = Object.assign({}, defaultProps, timeslotProps);
   }
 
+  _updateRenderDays(renderDays) {
+    const defaultRenderDays = {
+      sunday: true,
+      monday: true,
+      tuesday: true,
+      wednesday: true,
+      thursday: true,
+      friday: true,
+      saturday: true,
+    };
+
+    this.renderDays = Object.assign({}, defaultRenderDays, renderDays);
+  }
+
   componentWillReceiveProps(nextProps) {
     this._updateInputProps(nextProps.startDateInputProps, nextProps.endDateInputProps);
     this._updateTimeslotProps(nextProps.timeslotProps);
@@ -252,6 +268,7 @@ Calendar.defaultProps = {
  * @type {Array} selectedTimeslots: Initial value for selected timeslot inputs. Expects Dates formatted as Strings.
  * @type {Array} disabledTimeslots: Initial value for selected timeslot inputs. Expects Dates formatted as Strings.
  * @type {Integer} maxTimexlots: maximum ammount of timeslots to select.
+ * @type {Object} renderDays: An array of days which states which days of the week to render. By default renders all days.
  * @type {Object} startDateInputProps: properties for the startDate Inputs. Includes name, class, type (hidden, text...)
  * @type {Object} endDateInputProps: properties for the endDate Inputs. Includes name, class, type (hidden, text...)
  */
@@ -262,7 +279,7 @@ Calendar.propTypes = {
   selectedTimeslots: PropTypes.array,
   disabledTimeslots: PropTypes.array,
   maxTimeslots: PropTypes.number,
-  inputProps: PropTypes.object,
+  renderDays: PropTypes.object,
   startDateInputProps: PropTypes.object,
   endDateInputProps: PropTypes.object,
 };
