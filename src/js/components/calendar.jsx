@@ -7,31 +7,10 @@ import Month from './month.jsx';
 export default class Calendar extends React.Component {
   constructor(props) {
 
-    const startDateInputProps = {
-      name: 'tsc-startDate',
-      classes: 'tsc-hidden-input',
-      type: 'hidden',
-    };
-
-    const endDateInputProps = {
-      name: 'tsc-endDate',
-      class: 'tsc-hidden-input',
-      type: 'hidden',
-    };
-
-    const timeslotProps = {
-      format: 'h',
-      showFormat: 'h:mm A',
-    };
-
     super(props);
 
-    this.inputProps = {
-      startDate: Object.assign({}, startDateInputProps, this.props.startDateInputProps),
-      endDate: Object.assign({}, endDateInputProps, this.props.endDateInputProps),
-    };
-
-    this.timeslotProps = Object.assign({}, timeslotProps, this.props.timeslotProps);
+    this._updateInputProps(this.props.startDateInputProps, this.props.endDateInputProps);
+    this._updateTimeslotProps(this.props.timeslotProps);
 
     this.state = {
       currentDate: moment(props.initialDate),
