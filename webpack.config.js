@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var WebpackBundleSizeAnalyzerPlugin = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin;
 const path = require('path');
 
 module.exports = {
@@ -10,6 +11,8 @@ module.exports = {
     libraryTarget: 'umd',
   },
   plugins: [
+    new WebpackBundleSizeAnalyzerPlugin('./reports/plain-report.txt'),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production'),
