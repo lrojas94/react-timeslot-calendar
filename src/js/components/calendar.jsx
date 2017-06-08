@@ -22,9 +22,6 @@ export default class Calendar extends React.Component {
   render() {
     return (
       <div className = "tsc-calendar">
-        { this.state.selectedTimeslots.map((timeslot) => {
-          return timeslot.startDate.format('MMMM Do YYYY, h:mm:ss A');
-        }) }
         { this._renderActions() }
         { this._renderMonth() }
         { this._renderInputs() }

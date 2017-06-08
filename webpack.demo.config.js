@@ -1,5 +1,15 @@
 var webpack = require('webpack');
 const path = require('path');
+const hljs = require('highlight.js');
+const marked = require('marked');
+
+const renderer = new marked.Renderer();
+renderer.code = function(code, language){
+  return '<pre><code class="hljs ' + language + '">' +
+    hljs.highlight(language, code).value +
+    '</code></pre>';
+};
+
 
 module.exports = {
 
@@ -7,8 +17,15 @@ module.exports = {
 
   output: {
     filename: './public/build.js',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production'),
+      },
+    }),
+  ],
   module: {
     loaders: [
       {
@@ -22,13 +39,24 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [{
-            loader: "style-loader" // creates style nodes from JS strings
+          loader: 'style-loader', // creates style nodes from JS strings
         }, {
-            loader: "css-loader" // translates CSS into CommonJS
+          loader: 'css-loader', // translates CSS into CommonJS
         }, {
-            loader: "sass-loader" // compiles Sass to CSS
-        }]
-      }
-    ]
-  }
+          loader: 'sass-loader', // compiles Sass to CSS
+        }],
+      },
+      {
+        test: /\.md$/,
+        use: [{
+          loader: 'html-loader',
+        }, {
+          loader: 'markdown-loader',
+          options: {
+            renderer,
+          },
+        }],
+      },
+    ],
+  },
 };

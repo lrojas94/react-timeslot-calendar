@@ -2,25 +2,47 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
 
-import '../../styles/main.scss';
+import '../../styles/demo/main.scss';
 
 import ReactTimeslotCalendar from './../react-timeslot-calendar.jsx';
+import MarkdownSnippet from './../util/markdown-snippet.jsx';
+/** Code snippets **/
+import customTimeslotSnippet from './snippets/custom-timeslot.md';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.initialDate = moment([2017, 3, 24]);
+
+  }
   render() {
     return (
+      <div className = "app">
+        <h1> React Timeslot Calendar </h1>
+        { this._customTimeslotSnippetRender() }
+      </div>
+    );
+  }
+
+  _customTimeslotSnippetRender() {
+    return (
       <div>
-        React Timeslot Calendar!
+        <h3> Using Custom Timeslots </h3>
+        <MarkdownSnippet snippet = { customTimeslotSnippet }/>
         <ReactTimeslotCalendar
-          initialDate = { moment().format() }
-          renderDays = { {
-            sunday: false,
-            saturday: false,
-          } }
+          initialDate = { this.initialDate.format() }
+          timeslots = { [
+            ['9', '10'],
+            ['10', '11'],
+            ['18'],
+          ] }
         />
       </div>
     );
   }
+
+
 }
 
 ReactDOM.render(<App />, document.getElementById('react-timeslot-calendar'));

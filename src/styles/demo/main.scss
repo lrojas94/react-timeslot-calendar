@@ -1,0 +1,29 @@
+@import "../abstract/variables";
+body, {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html,
+#react-timeslot-calendar, {
+  min-height: 100%;
+}
+
+.app {
+  background: $month-bg-color;
+  font-family: $default-fonts;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h1, h3 {
+    text-align: center;
+    font-weight: 100;
+  }
+
+  h1 {
+    color: $timeslot-selected-bg-color;
+    padding-bottom: 0.5em;
+  }
+}
