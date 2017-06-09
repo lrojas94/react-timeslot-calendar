@@ -1,6 +1,6 @@
 {
   "name": "react-timeslot-calendar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A calendar based on timeslots which can be set as available, occupied and so on.",
   "main": "build/build.min.js",
   "scripts": {
