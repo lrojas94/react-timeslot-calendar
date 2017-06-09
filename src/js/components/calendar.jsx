@@ -101,13 +101,13 @@ export default class Calendar extends React.Component {
             name = { startDate.name + inputPrefix }
             className = { startDate.class }
             type = { startDate.type }
-            value = { timeslot.startDate.format('MMMM Do YYYY, h:mm:ss A') }
+            value = { timeslot.startDate.format() }
           />
           <input
             name = { endDate.name + inputPrefix }
             className = { endDate.class }
             type = { endDate.type }
-            value = { timeslot.endDate.format('MMMM Do YYYY, h:mm:ss A') }
+            value = { timeslot.endDate.format() }
           />
         </div>
       );
