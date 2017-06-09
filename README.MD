@@ -1,5 +1,6 @@
 # React Timeslot Calendar
 A calendar component which allows users to select and reserve avaiblable timeslots so that they can setup a meeting and/or event.
+[![Build Status](https://travis-ci.org/lrojas94/react-timeslot-calendar.svg?branch=master)](https://travis-ci.org/lrojas94/react-timeslot-calendar)
 
 ## Dependencies
 * React 15.4.4 and up
