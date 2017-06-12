@@ -25603,13 +25603,13 @@ var Calendar = function (_React$Component) {
             name: startDate.name + inputPrefix,
             className: startDate.class,
             type: startDate.type,
-            value: timeslot.startDate.format('MMMM Do YYYY, h:mm:ss A')
+            value: timeslot.startDate.format()
           }),
           _react2.default.createElement('input', {
             name: endDate.name + inputPrefix,
             className: endDate.class,
             type: endDate.type,
-            value: timeslot.endDate.format('MMMM Do YYYY, h:mm:ss A')
+            value: timeslot.endDate.format()
           })
         );
       });
@@ -25687,7 +25687,8 @@ var Calendar = function (_React$Component) {
       }
 
       this.setState({
-        selectedTimeslots: newSelectedTimeslots
+        selectedTimeslots: newSelectedTimeslots,
+        currentDate: (0, _moment2.default)(newTimeslot.startDate)
       });
     }
   }, {
@@ -25891,20 +25892,22 @@ var Day = function (_React$Component) {
             description += ' - ';
           }
         }
-        var timeslotDate = momentTime.clone();
-        timeslotDate.add(slot[0], timeslotProps.format);
+        var timeslotDates = {
+          startDate: momentTime.clone().add(slot[0], timeslotProps.format),
+          endDate: momentTime.clone().add(slot[slot.length - 1], timeslotProps.format)
+        };
 
         var status = _timeslot3.DEFAULT;
-        if (timeslotDate.isBefore(initialDate) || timeslotDate.isSame(initialDate)) {
+        if (timeslotDates.startDate.isBefore(initialDate) || timeslotDates.startDate.isSame(initialDate)) {
           status = _timeslot3.DISABLED;
         }
 
         var isSelected = selectedTimeslots.some(function (selectedTimeslot) {
-          return timeslotDate.format() === selectedTimeslot.startDate.format();
+          return timeslotDates.startDate.format() === selectedTimeslot.startDate.format();
         });
 
         var isDisabled = disabledTimeslots.some(function (disabledTimeslot) {
-          return timeslotDate.format() === disabledTimeslot.startDate.format();
+          return disabledTimeslot.startDate.isBetween(timeslotDates.startDate, timeslotDates.endDate, null, '[)') || disabledTimeslot.endDate.isBetween(timeslotDates.startDate, timeslotDates.endDate, null, '(]');
         });
 
         if (isDisabled) {

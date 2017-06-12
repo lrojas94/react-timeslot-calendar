@@ -1,4 +1,7 @@
 # CHANGELOG
+## Version 0.1.3:
+* **Bug Fix**: Improve date handling for disabled dates. Before it was only considering startDate, now, it takes into account startDate && endDate.
+
 ## Version 0.1.2:
 * **Bug Fix**: Selecting a Timeslot made calendar return to initial date.
 
