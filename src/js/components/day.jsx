@@ -61,20 +61,23 @@ export default class Day extends React.Component {
           description += ' - ';
         }
       }
-      let timeslotDate = momentTime.clone();
-      timeslotDate.add(slot[0], timeslotProps.format);
+      let timeslotDates = {
+        startDate: momentTime.clone().add(slot[0], timeslotProps.format),
+        endDate: momentTime.clone().add(slot[slot.length - 1], timeslotProps.format),
+      };
 
       let status = DEFAULT;
-      if (timeslotDate.isBefore(initialDate) || timeslotDate.isSame(initialDate)) {
+      if (timeslotDates.startDate.isBefore(initialDate) || timeslotDates.startDate.isSame(initialDate)) {
         status = DISABLED;
       }
 
       const isSelected = selectedTimeslots.some((selectedTimeslot) => {
-        return timeslotDate.format() === selectedTimeslot.startDate.format();
+        return timeslotDates.startDate.format() === selectedTimeslot.startDate.format();
       });
 
       const isDisabled = disabledTimeslots.some((disabledTimeslot) => {
-        return timeslotDate.format() === disabledTimeslot.startDate.format();
+        return disabledTimeslot.startDate.isBetween(timeslotDates.startDate, timeslotDates.endDate, null, '[)') ||
+               disabledTimeslot.endDate.isBetween(timeslotDates.startDate, timeslotDates.endDate, null, '(]');
       });
 
       if (isDisabled) {
