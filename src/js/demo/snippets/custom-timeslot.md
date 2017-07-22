@@ -6,5 +6,10 @@
         ['10', '11'],
         ['18'],
     ] }
+
+    onSelectTimeslot={(timeslots, lastSelected) => {
+        // Do stuff with timeslots.
+        console.log(lastSelected.startDate);
+    }}
 />
 ```

@@ -28,7 +28,7 @@ export default class App extends React.Component {
   _customTimeslotSnippetRender() {
     return (
       <div>
-        <h3> Using Custom Timeslots </h3>
+        <h3> Using Custom Timeslots and Callback </h3>
         <MarkdownSnippet snippet = { customTimeslotSnippet }/>
         <ReactTimeslotCalendar
           initialDate = { this.initialDate.format() }
@@ -37,6 +37,14 @@ export default class App extends React.Component {
             ['10', '11'],
             ['18'],
           ] }
+          maxTimeslots = { 3 }
+          onSelectTimeslot = { (timeslots, lastSelected) => {
+            console.log('All Timeslots:');
+            console.log(timeslots);
+
+            console.log('Last selected timeslot:');
+            console.log(lastSelected);
+          } }
         />
       </div>
     );

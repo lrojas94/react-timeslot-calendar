@@ -173,6 +173,7 @@ export default class Calendar extends React.Component {
 
     const {
       maxTimeslots,
+      onSelectTimeslot,
     } = this.props;
 
     const newSelectedTimeslots = selectedTimeslots.slice();
@@ -197,6 +198,9 @@ export default class Calendar extends React.Component {
     this.setState({
       selectedTimeslots: newSelectedTimeslots,
       currentDate: moment(newTimeslot.startDate),
+    }, () => {
+      // State was set:
+      onSelectTimeslot(newSelectedTimeslots, newTimeslot);
     });
   }
 
@@ -281,4 +285,5 @@ Calendar.propTypes = {
   renderDays: PropTypes.object,
   startDateInputProps: PropTypes.object,
   endDateInputProps: PropTypes.object,
+  onSelectTimeslot: PropTypes.func,
 };

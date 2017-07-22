@@ -1,4 +1,3 @@
-# CHANGELOG
 ## Version 0.1.3:
 * **Bug Fix**: Improve date handling for disabled dates. Before it was only considering startDate, now, it takes into account startDate && endDate.
 

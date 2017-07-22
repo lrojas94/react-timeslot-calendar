@@ -34,6 +34,7 @@ ReactTimeslotCalendar.defaultProps = {
  * @type {Object} renderDays: An array of days which states which days of the week to render. By default renders all days.
  * @type {Object} startDateInputProps: properties for the startDate Inputs. Includes name, class, type (hidden, text...)
  * @type {Object} endDateInputProps: properties for the endDate Inputs. Includes name, class, type (hidden, text...)
+ * @type {Object} onSelectTimeslot: Function which takes as parameters 1) The array of selected timeslots and 2) The latest selected timeslot.
  */
 ReactTimeslotCalendar.propTypes = {
   initialDate: PropTypes.string.isRequired,
@@ -45,4 +46,5 @@ ReactTimeslotCalendar.propTypes = {
   renderDays: PropTypes.object,
   startDateInputProps: PropTypes.object,
   endDateInputProps: PropTypes.object,
+  onSelectTimeslot: PropTypes.func,
 };
