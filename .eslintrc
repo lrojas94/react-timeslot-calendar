@@ -25,6 +25,9 @@
   },
   "globals": {
     "document": true,
+    "console": true,
+    "__dirname": true,
+    "module": true,
   },
   "env": {
     "jest/globals": true

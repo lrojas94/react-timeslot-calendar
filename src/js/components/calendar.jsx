@@ -200,7 +200,7 @@ export default class Calendar extends React.Component {
       currentDate: moment(newTimeslot.startDate),
     }, () => {
       // State was set:
-      onSelectTimeslot(newSelectedTimeslots, newTimeslot);
+      onSelectTimeslot && onSelectTimeslot(newSelectedTimeslots, newTimeslot);
     });
   }
 
