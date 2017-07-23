@@ -96,6 +96,20 @@ let startDateInputProps = {
 ```
 * **endDateInputProps** (`Object`): Same idea as **startDateInputProps** but instead takes effect in the `endDate` input.
 
+* **onSelectTimeslot** (`Function`): A callback which takes as parameters `selectedTimeslots (array)` and `lastSelectedTimeslot (object)`. Every timeslot object contains `startDate` and `endDate`, both of which are MomentJS objects.
+```js
+let onSelectTimeslot = (allTimeslots, lastSelectedTimeslot) => {
+  /**
+   * All timeslot objects include `startDate` and `endDate`.
+
+   * It is important to note that if timelots provided contain a single
+   * value (e.g: timeslots = [['8'], ['9', '10']) then only `startDate` is filled up with
+   * the desired information.
+   */
+  console.log(lastSelectedTimeslot.startDate); // MomentJS object.
+
+}
+```
 ### Development
 We're open to any help and support, so feel free to open up a PR if you happen to have a great idea! Also, feel free to take up any issues (if available).
 

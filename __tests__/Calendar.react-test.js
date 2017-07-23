@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import sinon from 'sinon';
 import moment from 'moment';
 import {
   mount,
@@ -51,6 +52,26 @@ describe('Render tests', () => {
     });
 
     expect(component.state().selectedTimeslots).toHaveLength(2);
+  });
+
+  test('Expects onSelectTimeslot to be called as many times as timeslots are clicked', () => {
+    const onSelectTimeslot = sinon.spy();
+    const component = mount(
+      <Calendar
+        initialDate = { moment().format() }
+        timeslots = { DEFAULT_TIMESLOTS }
+        onSelectTimeslot = { onSelectTimeslot }
+      />
+    );
+
+    const timeslots = component.find('.tsc-timeslot').not('.tsc-timeslot--disabled').slice(0,5);
+    let clickCount = 0;
+    timeslots.forEach((timeslot) => {
+      timeslot.simulate('click');
+      clickCount++;
+    });
+
+    expect(onSelectTimeslot).toHaveProperty('callCount', clickCount);
   });
 
   test('Expects 2 input elements after clicking a timeslot with min props.', () => {
