@@ -49,9 +49,9 @@ let timeslots = [
 ```
 By default, one hour timeslots from 12:00AM to 11:00PM are provided.
 
-* **timeslotFormat** (`Object`): How the timeslots will be interpreted by the calendar. By default, the format goes as follows:
+* **timeslotProps** (`Object`): How the timeslots will be interpreted by the calendar. By default, the format goes as follows:
 ```js
-let timslotFormat = {
+let timeslotProps = {
     format: 'h', // Each element in the timeslot array is an Hour
     showFormat: 'h:mm A', // They will be displayed as Hour:Minutes AM/PM
 }
