@@ -35,7 +35,7 @@
     "classnames": "^2.2.5",
     "css-loader": "^0.28.4",
     "enzyme": "^2.8.2",
-    "eslint": "^3.19.0",
+    "eslint": "^6.6.0",
     "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-react": "^7.0.1",
     "highlight.js": "^9.12.0",
